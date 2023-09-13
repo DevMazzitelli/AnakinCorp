@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block home %}
+    <div class="banniere">
+        <img src="{{ asset('./assets/medias/images/esport.webp') }}" id="imgEsport" alt="Joueur esport">
+        <div id="titrePrincipal">
+            <h2>Nous sommes</h2>
+            <h1>AnakinCorp</h1>
+            <div class="borderBottom"></div>
+            <p id="textUn">
+                Bienvenue sur le site de la <b>AnakinCorp</b>, une structure Esport sous loi 1901.
+                Notre objectif principal est de <b>créer des évenements</b> sur différentes scènes pour les <b>joueurs de tout niveaux</b>.
+                Nous avons une équipe <b>expérimentée et dévouée</b> qui travaille ensemble pour garantir que chaque tournoi soit organisé de manière
+                <b>efficace</b> et que les joueurs aient une expérience de jeu <b>agréable</b>.
+            </p>
+
+            <p id="textDeux">
+                Notre <b>communauté</b> est également très importante pour nous. Nous avons un serveur <a href="#">Discord</a> où les joueurs peuvent se rencontrer, discuter et s'entraîner ensemble.
+                Nous organisons également des <b>événements en direct</b> pour les membres de la communauté, tels que des <b>giveaways</b> et des <b>sessions de questions réponses</b> avec les membres de l'équipe.
+            </p>
+
+            <div class="buttonA">
+                <a href="#">Nous contacter</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="nosEquipes">
+        <h2>DECOUVREZ NOS EQUIPES</h2>
+        <div class="allCard">
+            <a href="">
+                <div class="card">
+                    <div class="image imageRocket">
+                        <img src="{{ asset('./assets/medias/images/rocketLeague.jpg') }}" alt="Équipe Rocket">
+                        <h3 class="title">Rocket League</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="card">
+                    <div class="image">
+                        <img src="{{ asset('./assets/medias/images/callOfduty.webp') }}" alt="Équipe Call of Duty">
+                        <h3 class="title">Call of Duty</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="card">
+                    <div class="image">
+                        <img src="{{ asset('./assets/medias/images/apexLegends.webp') }}" alt="Équipe Apex">
+                        <h3 class="title">Apex Legends</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="equipeEsport">
+        <img src="{{ asset('./assets/medias/images/equipeEsport.png') }}" alt="">
+
+        <div class="fenetre">
+            <h2>⭐ LAST NEWS ! ⭐</h2>
+            <img src="{{ asset('./assets/medias/images/battlePass.jpg') }}" alt="">
+        </div>
+    </div>
+
+{% endblock %}
