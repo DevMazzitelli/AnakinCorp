@@ -8,15 +8,15 @@
         <div id="titrePrincipal">
             <h2>Nous sommes</h2>
             <h1>AnakinCorp</h1>
-            <div class="borderBottom"></div>
-            <p id="textUn">
+            <div class="borderBottom" data-aos="fade-down" data-aos-duration="2000"></div>
+            <p id="textUn" data-aos="fade-right" data-aos-duration="2000">
                 Bienvenue sur le site de la <b>AnakinCorp</b>, une structure Esport sous loi 1901.
                 Notre objectif principal est de <b>créer des évenements</b> sur différentes scènes pour les <b>joueurs de tout niveaux</b>.
                 Nous avons une équipe <b>expérimentée et dévouée</b> qui travaille ensemble pour garantir que chaque tournoi soit organisé de manière
                 <b>efficace</b> et que les joueurs aient une expérience de jeu <b>agréable</b>.
             </p>
 
-            <p id="textDeux">
+            <p id="textDeux" data-aos="fade-left" data-aos-duration="2000">
                 Notre <b>communauté</b> est également très importante pour nous. Nous avons un serveur <a href="#">Discord</a> où les joueurs peuvent se rencontrer, discuter et s'entraîner ensemble.
                 Nous organisons également des <b>événements en direct</b> pour les membres de la communauté, tels que des <b>giveaways</b> et des <b>sessions de questions réponses</b> avec les membres de l'équipe.
             </p>
@@ -28,37 +28,7 @@
         </div>
     </div>
 
-    <div class="nosEquipes">
-        <h2>DECOUVREZ NOS EQUIPES</h2>
-        <div class="allCard">
-            <a href="">
-                <div class="card">
-                    <div class="image imageRocket">
-                        <img src="{{ asset('./assets/medias/images/rocketLeague.jpg') }}" alt="Équipe Rocket">
-                        <h3 class="title">Rocket League</h3>
-                    </div>
-                </div>
-            </a>
-
-            <a href="">
-                <div class="card">
-                    <div class="image">
-                        <img src="{{ asset('./assets/medias/images/callOfduty.webp') }}" alt="Équipe Call of Duty">
-                        <h3 class="title">Call of Duty</h3>
-                    </div>
-                </div>
-            </a>
-
-            <a href="">
-                <div class="card">
-                    <div class="image">
-                        <img src="{{ asset('./assets/medias/images/apexLegends.webp') }}" alt="Équipe Apex">
-                        <h3 class="title">Apex Legends</h3>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
+    {{ include('home/allEquipe.html.twig') }}
 
     <div class="equipeEsport">
         <img src="{{ asset('./assets/medias/images/equipeEsport.png') }}" alt="">
@@ -66,43 +36,146 @@
         <div class="fenetre">
             <h2> PROCHAINE COMPETITION </h2>
 
-            <div class="imageCompet">
+            <div class="imageCompet" data-aos="fade-right" data-aos-duration="2000">
                 <img src="{{ asset('./assets/medias/images/battlePass.jpg') }}" alt="compétition jeux videos">
                 <h3 class="titleCompet">Apex Legends</h3>
-                <span class="dateCompet">12 septembre 2023 <br> 21H00</span> <!-- Ajout de la date -->
+                <span class="dateCompet">SCRIM TRIO <br>12 septembre 2023 <br> 21H00</span> <!-- Ajout de la date -->
             </div>
 
             <a href="">
-                <div class="imageCompet">
+                <div class="imageCompet" data-aos="fade-left" data-aos-duration="2000">
                     <img src="{{ asset('./assets/medias/images/rocketLeague.jpg') }}" alt="compétition jeux videos">
                     <h3 class="titleCompet">Rocket League</h3>
-                    <span class="dateCompet">24 septembre 2023 <br> 21H30</span> <!-- Ajout de la date -->
+                    <span class="dateCompet">SCRIM TRIO <br>24 septembre 2023 <br> 21H30</span> <!-- Ajout de la date -->
 
                 </div>
             </a>
 
             <a href="">
-                <div class="imageCompet">
+                <div class="imageCompet" data-aos="fade-right" data-aos-duration="2000">
                     <img src="{{ asset('./assets/medias/images/callOfduty.webp') }}" alt="compétition jeux videos">
                     <h3 class="titleCompet">Call of Duty</h3>
-                    <span class="dateCompet">01 octobre 2023 <br> 18H30</span> <!-- Ajout de la date -->
+                    <span class="dateCompet">SCRIM TRIO <br>01 octobre 2023 <br> 18H30</span> <!-- Ajout de la date -->
 
                 </div>
             </a>
         </div>
     </div>
 
+
     <div class="partenaire">
         <h2>NOS PARTENAIRES</h2>
 
-        <div class="cardPartenaire left-card"> <!-- Ajoutez la classe left-card ici -->
+        <div class="cardPartenaire left-card">
             <img src="{{ asset('assets/medias/images/banniereAFT.jpg') }}" alt="Bannière AFT Tournament (Apex Legends)">
         </div>
 
-        <div class="cardPartenaire right-card"> <!-- Ajoutez la classe right-card ici -->
+        <div class="cardPartenaire right-card">
             <img src="{{ asset('assets/medias/images/banniereHsD.jpg') }}" alt="Bannière AFT Tournament (Apex Legends)">
         </div>
+    </div>
 
+    <div class="twitch">
+        <div class="cardTwitch">
+            <div class="cardStreamerAll">
+                <div class="twitchLogo">
+                    <img src="{{ asset('assets/medias/images/twitchLogo.png') }}" alt="">
+                </div>
+
+                <div class="cardStreamer" data-aos="fade-down" data-aos-duration="2000">
+                    <a href="" class="streamer-link">
+                        <img src="{{ asset('assets/medias/images/streamerAnakinCorp.png') }}" alt="Twitch de la AnakinCorp">
+                        <p class="nameStreamer">Anakin Corp</p>
+                    </a>
+                </div>
+
+
+                <div class="streamerPartenaire">
+                    <div class="cardStreamer" data-aos="fade-up-right" data-aos-duration="2000">
+                        <a href="">
+                            <img src="{{ asset('assets/medias/images/streamerFoxyy.png') }}" alt="Twitch de la AnakinCorp">
+                            <p class="nameStreamer">Just Foxxyy</p>
+                        </a>
+                    </div>
+
+                    <div class="cardStreamer" data-aos="fade-up-left" data-aos-duration="2000">
+                        <a href="">
+                            <img src="{{ asset('assets/medias/images/streamerSaifps.png') }}" alt="Twitch de la AnakinCorp">
+                            <p class="nameStreamer">Sai fps</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="actualites">
+        <h2>NOS ACTUALITÉS</h2>
+        <div class="allActualites">
+            <div class="cardActualite" data-aos="fade-up" data-aos-duration="2000">
+                <img src="{{ asset('assets/medias/images/battlePass.jpg') }}" alt="Bannière nouvelle annonce">
+                <h3>GAGNEZ 50 EUROS PAYPAL + BATTLEPASS</h3>
+                <p>
+                    Organisé par la AnakinCorp, tirage au sort le 30 septembre 2021 sur le serveur <a href="">Discord</a>
+                </p>
+            </div>
+
+            <div class="cardActualite" data-aos="fade-down" data-aos-duration="2000">
+                <img src="{{ asset('assets/medias/images/battlePass.jpg') }}" alt="Bannière nouvelle annonce">
+                <h3>COMPETITION COLD WAR</h3>
+                <p>
+                    Organisé par la AnakinCorp, Jeudi 20 et vendredi 21 Juillet à 20H sur le serveur <a href="">Discord</a>
+                </p>
+            </div>
+
+            <div class="cardActualite" data-aos="fade-up" data-aos-duration="2000">
+                <img src="{{ asset('assets/medias/images/battlePass.jpg') }}" alt="Bannière nouvelle annonce">
+                <h3>COMPETITION TRIO APEX LEGENDS</h3>
+                <p>
+                    Organisé par la AnakinCorp, Lundi 17 Juillet à 21H sur le serveur <a href="">Discord</a>
+            </div>
+
+            <div class="cardActualite" data-aos="fade-down" data-aos-duration="2000">
+                <img src="{{ asset('assets/medias/images/recrutement.png') }}" alt="Bannière nouvelle annonce">
+                <h3>La AnakinCorp recrute !</h3>
+                <p>
+                    Nous sommes à la recherche d'un <b>community manager</b> pour postuler, rendez-vous sur notre serveur <a href="">Discord</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="compteur">
+        <div class="imgClavierGaming">
+            <img src="{{ asset('assets/medias/images/clavierGaming.jpg') }}" alt="clavier gaming">
+            <div class="cardsContainer">
+                <div class="cardStats">
+                    <p id="compteur" class="number">0</p>
+                    <p class="nameCardStats">
+                        JOUEURS/SES
+                    </p>
+                </div>
+                <div class="cardStats">
+                    <p id="compteur2" class="number">0</p>
+                    <p class="nameCardStats">
+                        MEMBRES
+                    </p>
+                </div>
+                <div class="cardStats">
+                    <p id="compteur3" class="number">0</p>
+                    <p class="nameCardStats">
+                        EQUIPES
+                    </p>
+                </div>
+                <div class="cardStats">
+                    <p id="compteur4" class="number">0</p>
+                    <p class="nameCardStats">
+                        STAFF
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

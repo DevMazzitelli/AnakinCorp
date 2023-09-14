@@ -1,0 +1,33 @@
+{% block equipeEsport %}
+    <div class="nosEquipes">
+        <h2>DÉCOUVREZ NOS ÉQUIPES</h2>
+        <div class="allCard">
+            <a href="{{ path('app_equipe_rocketleague') }}">
+                <div class="card" data-aos="fade-right" data-aos-duration="2000">
+                    <div class="image imageRocket" >
+                        <img src="{{ asset('./assets/medias/images/rocketLeague.jpg') }}" alt="Équipe Rocket">
+                        <h3 class="title">Rocket League</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ path('app_equipe_callofduty') }}">
+                <div class="card">
+                    <div class="image">
+                        <img src="{{ asset('./assets/medias/images/callOfduty.webp') }}" alt="Équipe Call of Duty">
+                        <h3 class="title">Call of Duty</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ path('app_equipe_apexlegends') }}">
+                <div class="card" data-aos="fade-left" data-aos-duration="2000">
+                    <div class="image">
+                        <img src="{{ asset('./assets/medias/images/apexLegends.webp') }}" alt="Équipe Apex">
+                        <h3 class="title">Apex Legends</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -2,6 +2,8 @@
 @import "../utils/color";
 @import "../utils/placement";
 
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -17,8 +19,82 @@ body {
 header {
     height: 65px;
     width: 100%;
-    background-color: white;
+    background-color: $main-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Utilisez cette propriété pour aligner le contenu à gauche et à droite */
+    padding: 20px;
+    position: relative;
+
+
+
+    #sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $main-color;
+        width: 100%;
+        padding: 10px 0;
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: $last-color;
+            font-weight: bold;
+            padding: 5px 20px;
+        }
+    }
+
+
+    #nos-equipes:hover #sub-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute; /* Utilisez position absolue pour empêcher de pousser les éléments suivants */
+        top: 42px;
+        left: 69.5%;
+        width: 160px;
+        background-color: white;
+        z-index: 1; /* Assurez-vous que le sous-menu est au-dessus du reste du contenu */
+
+        a {
+            color: $main-color;
+
+            &:hover {
+                color: #3b82f6;
+            }
+        }
+    }
+
+    #logo {
+        margin-right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        cursor: pointer;
+    }
+
+    nav ul li {
+        margin: 10px;
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: $last-color;
+        font-weight: bold;
+    }
 }
+
+
 
 /*
 Bannière principale
@@ -43,6 +119,7 @@ Bannière principale
         align-items: center;
         margin-top: 100px;
 
+
         h1 {
             font-size: 3rem;
             font-weight: bold;
@@ -59,7 +136,7 @@ Bannière principale
         .borderBottom {
             border-bottom: 5px solid $last-color;
             width: 250px;
-            margin-right: 700px;
+            margin-right: 670px;
         }
 
         #textUn {
@@ -113,7 +190,6 @@ Nos équipes
     margin-bottom: 100px;
 
     h2 {
-        margin-top: -50px;
         font-size: 2rem;
         font-weight: bold;
         margin-bottom: 50px;
@@ -189,7 +265,7 @@ Equipe Esport
         transition: opacity 3s ease-in-out;
 
         .fenetre:hover {
-            opacity: 2; /* Réduisez l'opacité au survol */
+            opacity: 2;
         }
 
         h2 {
@@ -243,19 +319,20 @@ Equipe Esport
             transform: translate(-50%, -50%); /* Ajustez la position */
             background-color: #000209;
             border: 1px solid white;
-            opacity: 1;
+            opacity: 0;
             border-radius: 5px;
             color: white;
             text-align: center;
-            padding: 55px;
+            padding: 40px;
             font-size: 1.5rem;
             font-weight: bold;
             display: none; /* Masquez la date par défaut */
+            transition: opacity 3s ease-in-out;
         }
 
         .imageCompet:hover .dateCompet {
             display: block; /* Affichez la date au survol de la carte */
-
+            opacity: 1;
         }
     }
 }
@@ -296,6 +373,206 @@ Equipe Esport
         }
     }
 }
+
+.twitch {
+    margin-top: 450px;
+    background-color: #000000;
+    background-image: -webkit-linear-gradient(180deg, #000000 0%, #5b21b6 100%);
+    background-image: -moz-linear-gradient(180deg, #000000 0%, #5b21b6 100%);
+    background-image: -o-linear-gradient(180deg, #000000 0%, #5b21b6 100%);
+    background: linear-gradient(180deg, #000000 0%, #5b21b6 50%, #000000 100%);
+
+    display: flex;
+    justify-content: space-between;
+
+    .cardTwitch {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        .cardStreamerAll {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .twitchLogo  img{
+                width: 200px;
+                margin-bottom: 20px;
+                animation: jump 2s infinite;
+            }
+
+            .streamerPartenaire {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .cardStreamer {
+                position: relative; /* Assurez-vous que la carte a une position relative pour positionner le nom du streamer par rapport à la carte */
+
+                p {
+                    font-size: 30px;
+                }
+
+                img {
+                    border: 2px solid $last-color;
+                    margin: 10px 200px;
+                }
+
+                .nameStreamer {
+                    position: absolute;
+                    top: 50%; /* Positionnez le nom verticalement au centre de la carte */
+                    left: 50%; /* Positionnez le nom horizontalement au centre de la carte */
+                    transform: translate(-50%, -50%); /* Pour centrer parfaitement le nom */
+                    background-color: rgba(0, 0, 0, 0.5); /* Fond avec opacité de 0.5 */
+                    color: white; /* Couleur du texte */
+                    padding: 5px 10px; /* Espacement autour du texte */
+                    border-radius: 5px; /* Coins arrondis */
+                    display: none;
+                }
+            }
+
+            .cardStreamer a:hover .nameStreamer {
+                display: block;
+            }
+
+        }
+    }
+
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0); /* L'image reste à sa position d'origine au début de l'animation */
+    }
+    50% {
+        transform: translateY(-10px); /* L'image saute vers le haut à mi-chemin de l'animation */
+    }
+    100% {
+        transform: translateY(0); /* L'image revient à sa position d'origine à la fin de l'animation */
+    }
+}
+
+
+.actualites {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+}
+
+.allActualites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espace égal entre les cartes */
+    width: 100%;
+    margin-left: 200px;
+    margin-right: 200px;
+
+}
+
+.cardActualite {
+    width: 500px;
+    height: 300px;
+    flex: 1; /* Chaque carte prendra une partie égale de l'espace disponible sur la ligne */
+    margin: 20px;
+    max-width: calc(25% - 50px); /* Limite à 4 cartes par ligne avec un espace de 20px de chaque côté */
+    border-radius: 5px;
+    background-color: $last-color;
+    overflow: hidden; /* Pour cacher le dépassement de contenu */
+    box-sizing: border-box; /* Empêche le dépassement de la largeur maximale en raison de la bordure */
+    color: $main-color;
+    -webkit-box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.6);
+    box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.4);
+    padding-bottom: 5px;
+
+    img {
+        width: 100%;
+        height: 60%;
+    }
+
+    h3 {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 17.5px;
+    }
+
+    p {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 15px;
+
+        a {
+            text-decoration: none;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+    }
+}
+
+.compteur {
+    .imgClavierGaming {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .cardStats {
+            background-color: white;
+            width: 200px;
+            height: 200px;
+            display: flex; /* Ajout pour activer le mode flex */
+            flex-direction: column; /* Pour que le texte soit centré verticalement */
+            justify-content: center; /* Pour que le texte soit centré verticalement */
+
+            p {
+                color: $main-color;
+                opacity: 1;
+                font-size: 1.5rem;
+                text-align: center; /* Centrer le texte horizontalement */
+            }
+
+            .number {
+                font-weight: bold;
+                font-size: 3rem;
+            }
+        }
+    }
+    .cardsContainer {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 25%;
+        width: 100%;
+        padding-left: 200px;
+        padding-right: 200px;
+        opacity: 0.8;
+    }
+}
+
+
+
+
+
 
 
 

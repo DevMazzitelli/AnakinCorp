@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        <link rel="shortcut icon" href="{{ asset('./medias/images/logoAnakinCorp.jpg') }}" type="image/jpg">
-        
+        <link rel="shortcut icon" href="{{ asset('assets/medias/images/logoAnakinCorp.png') }}" type="image/jpg">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -16,16 +17,34 @@
     </head>
     <body>
     <header>
+        <a href="{{ path('app_home') }}">
+            <img src="{{ asset('assets/medias/images/logoAnakinCorp.png') }}" id="logo"  alt="logo AnakinCorp">
+        </a>
         <nav>
+
             <ul>
-                <li><a href="">aa</a></li>
-                <li><a href="">aa</a></li>
-                <li><a href="">aa</a></li>
-                <li><a href="">aa</a></li>
+                <li id="nos-equipes"><a href="{{ path('app_equipe') }}">NOS EQUIPES</a>
+                    <div id="sub-menu">
+                        <a href="{{ path('app_equipe_rocketleague') }}">Rocket League</a>
+                        <a href="{{ path('app_equipe_callofduty') }}">Call of Duty</a>
+                        <a href="{{ path('app_equipe_apexlegends') }}">Apex Legends</a>
+                    </div>
+                </li>
+                <li><a href="">COMPETITIONS</a></li>
+                <li><a href="">PARTENAIRES</a></li>
+                <li><a href="">ACTUALITES</a></li>
             </ul>
         </nav>
+
     </header>
         {% block home %}{% endblock %}
-    
+        {% block equipe %}{% endblock %}
+        {% block equipeEsport %}{% endblock %}
+        {% block equipeRocketLeague %}{% endblock %}
+        {% block equipeCallOfDuty %}{% endblock %}
+        {% block equipeApexLegends %}{% endblock %}
+    <script>
+        AOS.init();
+    </script>
     </body>
 </html>

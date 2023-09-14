@@ -1,0 +1,86 @@
+@import "../utils/mixins";
+@import "../utils/color";
+@import "../utils/placement";
+
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+
+.equipeRocketLeague {
+
+  margin-bottom: 100px;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .allCard {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right: 20%;
+
+    .card {
+      width: 350px;
+      height: 500px;
+      border: 2px solid $last-color;
+      border-radius: 5px;
+      overflow: hidden; /* Pour cacher le dépassement de contenu */
+    }
+
+    .description {
+      position: absolute;
+      top: 50%; /* Centrez verticalement la date */
+      left: 50%; /* Centrez horizontalement la date */
+      width: 80%;
+      height: 300px;
+      transform: translate(-50%, -50%); /* Ajustez la position */
+      background-color: #000209;
+      border: 1px solid white;
+      opacity: 0.5;
+      border-radius: 5px;
+      color: white;
+      padding: 10px;
+      // espacement de mes phrase
+      line-height: 1.5;
+      display: none; /* Masquez la date par défaut */
+      transition: opacity 3s ease-in-out;
+      font-size: 1.2rem;
+    }
+
+    .card:hover .description {
+      display: block;
+      opacity: 0.8;
+      box-shadow: 0 0 10px $last-color;
+
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      position: relative; /* Pour positionner le titre par rapport à l'image */
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ajustement de l'image pour remplir la div sans déformation */
+    }
+
+    .title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le titre */
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}
