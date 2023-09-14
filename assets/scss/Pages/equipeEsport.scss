@@ -26,36 +26,28 @@
     .card {
       width: 350px;
       height: 500px;
+      margin-bottom: 50px;
       border: 2px solid $last-color;
       border-radius: 5px;
       overflow: hidden; /* Pour cacher le dépassement de contenu */
     }
 
     .description {
-      position: absolute;
-      top: 50%; /* Centrez verticalement la date */
-      left: 50%; /* Centrez horizontalement la date */
-      width: 80%;
-      height: 300px;
-      transform: translate(-50%, -50%); /* Ajustez la position */
-      background-color: #000209;
+      width: 350px;
+      height: 150px;
       border: 1px solid white;
-      opacity: 0.5;
-      border-radius: 5px;
-      color: white;
-      padding: 10px;
-      // espacement de mes phrase
-      line-height: 1.5;
-      display: none; /* Masquez la date par défaut */
-      transition: opacity 3s ease-in-out;
-      font-size: 1.2rem;
+        padding: 10px;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+        display: none;
+        opacity: 0; /* Définir l'opacité initiale à 0 */
+        transition: opacity 0.5s ease; /* Ajouter une transition d'opacité */
     }
 
-    .card:hover .description {
+    .cardEquipe:hover .description {
       display: block;
-      opacity: 0.8;
-      box-shadow: 0 0 10px $last-color;
-
+      opacity: 1; /* Augmenter l'opacité au survol */
     }
 
     .image {
