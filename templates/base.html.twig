@@ -32,14 +32,14 @@
                 </li>
                 <li><a href="">COMPETITIONS</a></li>
                 <li><a href="">PARTENAIRES</a></li>
-                <li><a href="">ACTUALITES</a></li>
+                <li><a href="{{ path('app_actualites') }}">ACTUALITES</a></li>
             </ul>
         </nav>
 
     </header>
         {% block home %}{% endblock %}
         {% block equipe %}{% endblock %}
-        {% block equipeEsport %}{% endblock %}
+        {% block pageActualites %}{% endblock %}
         {% block equipeRocketLeague %}{% endblock %}
         {% block equipeCallOfDuty %}{% endblock %}
         {% block equipeApexLegends %}{% endblock %}

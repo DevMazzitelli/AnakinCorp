@@ -97,9 +97,20 @@
   .description {
 
     width: 50%;
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        font-family : "Copperplate Gothic Bold", sans-serif;
+        margin-bottom: 10px;
+    }
      p {
+       // ecriture pour site gaming
+    font-size: 1.2rem;
         margin-top: 5px;
         margin-bottom: 50px;
+       line-height: 30px;
      }
   }
 }
