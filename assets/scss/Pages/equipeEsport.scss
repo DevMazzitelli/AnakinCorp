@@ -4,7 +4,35 @@
 
 @import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
 
-.equipeRocketLeague {
+
+.equipeEsportRocketLeaguePresentation {
+  background-color: #000000;
+  background-image: -webkit-linear-gradient(180deg, #000000 0%, #2300ff 51%, #000000 100%);
+  background-image: -moz-linear-gradient(180deg, #000000 0%, #2300ff 51%, #000000 100%);
+  background-image: -o-linear-gradient(180deg, #000000 0%, #2300ff 51%, #000000 100%);
+  background-image: linear-gradient(180deg, #000000 0%, #2300ff 51%, #000000 100%);
+}
+
+.equipeEsportApexLegendsPresentation {
+  background-color: #000000;
+  background-image: -webkit-linear-gradient(180deg, #000000 0%, #ff0004 51%, #000000 100%);
+  background-image: -moz-linear-gradient(180deg, #000000 0%, #ff0004 51%, #000000 100%);
+  background-image: -o-linear-gradient(180deg, #000000 0%, #ff0004 51%, #000000 100%);
+  background-image: linear-gradient(180deg, #000000 0%, #ff0004 51%, #000000 100%);
+}
+
+.equipeEsportCallofDutyPresentation {
+  background-color: #000000;
+  background-image: -webkit-linear-gradient(180deg, #000000 0%, #28b706 51%, #000000 100%);
+  background-image: -moz-linear-gradient(180deg, #000000 0%, #28b706 51%, #000000 100%);
+  background-image: -o-linear-gradient(180deg, #000000 0%, #28b706 51%, #000000 100%);
+  background-image: linear-gradient(180deg, #000000 0%, #28b706 51%, #000000 100%);
+
+
+}
+
+
+.equipe {
 
   margin-bottom: 100px;
 
@@ -23,6 +51,13 @@
     margin-left: 20%;
     margin-right: 20%;
 
+    .cardEquipe {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 50px;
+    }
+
     .card {
       width: 350px;
       height: 500px;
@@ -30,36 +65,19 @@
       border: 2px solid $last-color;
       border-radius: 5px;
       overflow: hidden; /* Pour cacher le dépassement de contenu */
-    }
-
-    .description {
-      width: 350px;
-      height: 150px;
-      border: 1px solid white;
-        padding: 10px;
-        text-align: center;
-        font-size: 0.9rem;
-        font-weight: bold;
-        display: none;
-        opacity: 0; /* Définir l'opacité initiale à 0 */
-        transition: opacity 0.5s ease; /* Ajouter une transition d'opacité */
-    }
-
-    .cardEquipe:hover .description {
-      display: block;
-      opacity: 1; /* Augmenter l'opacité au survol */
+      cursor: pointer;
     }
 
     .image {
       width: 100%;
       height: 100%;
       position: relative; /* Pour positionner le titre par rapport à l'image */
-    }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ajustement de l'image pour remplir la div sans déformation */
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ajustement de l'image pour remplir la div sans déformation */
+      }
     }
 
     .title {
@@ -74,5 +92,14 @@
       font-size: 1.5rem;
       font-weight: bold;
     }
+  }
+
+  .description {
+
+    width: 50%;
+     p {
+        margin-top: 5px;
+        margin-bottom: 50px;
+     }
   }
 }
