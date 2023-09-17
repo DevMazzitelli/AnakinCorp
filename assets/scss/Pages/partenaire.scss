@@ -1,0 +1,39 @@
+@import "../utils/mixins";
+@import "../utils/color";
+@import "../utils/placement";
+
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+
+.partenaire {
+  .cardPartenaire {
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        text-align: center;
+      line-height: 1.5rem;
+    }
+    .reseau {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+margin: 0 0.5rem;
+      }
+    }
+  }
+}

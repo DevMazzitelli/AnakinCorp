@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Nos partenaires
+{% endblock %}
+
+{% block pagePartenaire %}
+    <div class="partenaire">
+        <h2>NOS PARTENAIRES</h2>
+
+        <div class="cardPartenaire left-card">
+            <img src="{{ asset('assets/medias/images/banniereAFT.jpg') }}" alt="Bannière AFT Tournament (Apex Legends)">
+            <h3>Apex French Tournament</h3>
+            <p>
+                L'AFT est une association qui organise des tournois sur le jeu Apex Legends. <br>
+                Nous avons eu l'occasion de travailler avec eux sur plusieurs évènements.
+                Créer en 2019, l'AFT est une association qui a pour but de promouvoir le jeu Apex Legends en France.
+            </p>
+            <div class="reseau">
+                <p>
+                    <a href="https://twitter.com/ApexFrenchTourn" target="_blank">
+                        <img src="{{ asset('assets/medias/logo/twitter.png') }}" alt="">
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.twitch.tv/apexfrenchtournament" target="_blank">
+                        <img src="{{ asset('assets/medias/logo/Twitch.jpg') }}" alt="">
+                    </a>
+                </p>
+                <p>
+                    <a href="https://discord.gg/8Q9QY9" target="_blank">
+                        <img src="{{ asset('assets/medias/logo/discord.png') }}" alt="">
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="cardPartenaire right-card">
+            <img src="{{ asset('assets/medias/images/banniereHsD.jpg') }}" alt="Bannière AFT Tournament (Apex Legends)">
+            <h3>Hardstuck</h3>
+                <p>
+                    Hardstuck est une association qui organise des tournois sur le jeu League of Legends. <br>
+                    Nous avons eu l'occasion de travailler avec eux sur plusieurs évènements.
+                    Créée en 2019, Hardstuck est une association qui a pour but de promouvoir l'esport en France.
+                </p>
+            <div class="reseau">
+                <p>
+                    <a href="https://twitter.com/ApexFrenchTourn" target="_blank">
+                        <img src="{{ asset('assets/medias/logo/twitter.png') }}" alt="">
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.twitch.tv/apexfrenchtournament" target="_blank">
+                        <img src="{{ asset('assets/medias/logo/Twitch.jpg') }}" alt="">
+                    </a>
+                </p>
+                <p>
+                    <a href="https://discord.gg/8Q9QY9" target="_blank">
+                        <img src="{{ asset('assets/medias/logo/discord.png') }}" alt="">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

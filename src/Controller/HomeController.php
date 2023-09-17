@@ -23,4 +23,12 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/partenaire', name: 'app_partenaire')]
+    public function partenaire(): Response
+    {
+        return $this->render('home/partenaire.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
 }

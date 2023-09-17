@@ -31,7 +31,7 @@
                     </div>
                 </li>
                 <li><a href="">COMPETITIONS</a></li>
-                <li><a href="">PARTENAIRES</a></li>
+                <li><a href="{{ path('app_partenaire') }}">PARTENAIRES</a></li>
                 <li><a href="{{ path('app_actualites') }}">ACTUALITES</a></li>
             </ul>
         </nav>
@@ -39,10 +39,16 @@
     </header>
         {% block home %}{% endblock %}
         {% block equipe %}{% endblock %}
+
         {% block pageActualites %}{% endblock %}
+        {% block pagePartenaire %}{% endblock %}
+
         {% block equipeRocketLeague %}{% endblock %}
         {% block equipeCallOfDuty %}{% endblock %}
         {% block equipeApexLegends %}{% endblock %}
+
+        {% block login %}{% endblock %}
+        {% block register %}{% endblock %}
     <script>
         AOS.init();
     </script>
