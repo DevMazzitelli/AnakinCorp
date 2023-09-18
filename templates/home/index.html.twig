@@ -32,45 +32,31 @@
         <img src="{{ asset('./assets/medias/images/equipeEsport.png') }}" alt="">
 
         <div class="fenetre">
-            <h2> PROCHAINE COMPETITION </h2>
+            <h2>PROCHAINE COMPETITION</h2>
 
-            <div class="imageCompet" data-aos="fade-right" data-aos-duration="2000">
-                <img src="{{ asset('./assets/medias/images/battlePass.jpg') }}" alt="compétition jeux videos">
-                <h3 class="titleCompet">Apex Legends</h3>
-                <span class="dateCompet">SCRIM TRIO <br>12 septembre 2023 <br> 21H00</span> <!-- Ajout de la date -->
-            </div>
+            {% for key, competition in competitions|slice(0, 3) %}
+                <a href="{{ competition.link }}" target="_blank">
+                    <div class="imageCompet" data-aos="{{ key % 2 == 0 ? 'fade-right' : 'fade-left' }}" data-aos-duration="2000">
+                        <img src="{{ asset('medias/images/competition/' ~ competition.images) }}" alt="{{ competition.title }}">
+                        <h3 class="titleCompet">{{ competition.title }}</h3>
+                        <span class="dateCompet">{{ competition.type }} <br>{{ competition.date|date('d F Y H:i') }}</span>
+                    </div>
+                </a>
 
-            <a href="">
-                <div class="imageCompet" data-aos="fade-left" data-aos-duration="2000">
-                    <img src="{{ asset('./assets/medias/images/rocketLeague.jpg') }}" alt="compétition jeux videos">
-                    <h3 class="titleCompet">Rocket League</h3>
-                    <span class="dateCompet">SCRIM TRIO <br>24 septembre 2023 <br> 21H30</span> <!-- Ajout de la date -->
-
-                </div>
-            </a>
-
-            <a href="">
-                <div class="imageCompet" data-aos="fade-right" data-aos-duration="2000">
-                    <img src="{{ asset('./assets/medias/images/callOfduty.webp') }}" alt="compétition jeux videos">
-                    <h3 class="titleCompet">Call of Duty</h3>
-                    <span class="dateCompet">SCRIM TRIO <br>01 octobre 2023 <br> 18H30</span> <!-- Ajout de la date -->
-
-                </div>
-            </a>
+            {% endfor %}
         </div>
     </div>
-
 
     <div class="partenaire">
         <h2>NOS PARTENAIRES</h2>
 
-        <div class="cardPartenaire left-card">
-            <img src="{{ asset('assets/medias/images/banniereAFT.jpg') }}" alt="Bannière AFT Tournament (Apex Legends)">
-        </div>
-
-        <div class="cardPartenaire right-card">
-            <img src="{{ asset('assets/medias/images/banniereHsD.jpg') }}" alt="Bannière AFT Tournament (Apex Legends)">
-        </div>
+        {% for key, partenaire in partenaires|slice(0, 3)  %}
+            <div class="cardPartenaire {% if loop.index == 2 %}right-card{% else %}left-card{% endif %}" data-aos="{{ key % 2 == 0 ? 'fade-right' : 'fade-left' }}" data-aos-duration="2000">
+                <a href="{{ partenaire.link }}">
+                    <img src="{{ asset('medias/images/partenaire/' ~ partenaire.images) }}" alt="{{ partenaire.name }}">
+                </a>
+            </div>
+        {% endfor %}
     </div>
 
     <div class="twitch">

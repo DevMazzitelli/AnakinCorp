@@ -23,6 +23,12 @@
         <nav>
 
             <ul>
+                <!-- Si utilisateur connecter et admin -->
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href="{{ path('app_logout') }}">Déconnexion.</a></li>
+                    <li><a href="{{ path('admin') }}">Pannel d'administration</a></li>
+                {% endif %}
+
                 <li id="nos-equipes"><b>NOS EQUIPES</b>
                     <div id="sub-menu">
                         <a href="{{ path('app_equipe_rocketleague') }}">Rocket League</a>

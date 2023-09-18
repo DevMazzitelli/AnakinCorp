@@ -2,6 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Competition;
+use App\Entity\Partenaire;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -31,7 +34,23 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        yield MenuItem::linkToRoute('Accueil', 'fa fa-home', 'app_home');
+
+        yield MenuItem::linkToCrud('Ajouter une image', 'fas fa-plus', \App\Entity\Image::class)->setAction(Crud::PAGE_NEW);
+
+
+        yield MenuItem::subMenu('Compétitions', 'fas fa-trophy')->setSubItems(
+            [
+                MenuItem::linkToCrud('Toutes les compétitions', 'fas fa-list', Competition::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Competition::class)->setAction(Crud::PAGE_NEW),
+            ]
+        );
+
+        yield MenuItem::subMenu('Partenaires', 'fas fa-handshake')->setSubItems(
+            [
+                MenuItem::linkToCrud('Tous les partenaires', 'fas fa-list', Partenaire::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Partenaire::class)->setAction(Crud::PAGE_NEW),
+            ]
+        );
     }
 }
