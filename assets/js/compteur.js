@@ -1,5 +1,6 @@
 function incrementerCompteur(compteurElement, nombreCible, vitesseIncrementation) {
     let compteur = 0;
+    let compteursRestants = 4;
 
     const interval = setInterval(() => {
         compteur++;

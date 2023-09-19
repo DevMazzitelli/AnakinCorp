@@ -59,5 +59,12 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Ajouter', 'fas fa-plus', \App\Entity\Streamer::class)->setAction(Crud::PAGE_NEW),
             ]
         );
+
+        yield MenuItem::subMenu('Actualités', 'fas fa-newspaper')->setSubItems(
+            [
+                MenuItem::linkToCrud('Toutes les actualités', 'fas fa-list', \App\Entity\Actualite::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', \App\Entity\Actualite::class)->setAction(Crud::PAGE_NEW),
+            ]
+        );
     }
 }

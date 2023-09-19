@@ -1,37 +1,27 @@
 {% block actualites %}
-    <div class="actualites">
-        <h2>NOS ACTUALITÉS</h2>
+<div class="actualites">
+    <h2>NOS ACTUALITÉS</h2>
+    <div class="allActualites">
+        {% set actualitesPerRow = 4 %}
+        {% set actualiteCount = 0 %}
+        {% for actualite in actualites %}
+        {% if loop.index is even %}
+        <div class="cardActualite" data-aos="fade-up" data-aos-duration="2000">
+            {% else %}
+            <div class="cardActualite" data-aos="fade-down" data-aos-duration="2000">
+                {% endif %}
+                <img src="{{ asset('medias/images/actualite/' ~ actualite.images) }}" alt="Bannière nouvelle annonce">
+                <h3>{{ actualite.title }}</h3>
+                <p>{{ actualite.description }}</p>
+                <p>Rendez-vous sur le <a href="{{ actualite.link }}">Discord</a></p>
+            </div>
+            {% set actualiteCount = actualiteCount + 1 %}
+            {% if actualiteCount == actualitesPerRow %}
+            {% set actualiteCount = 0 %}
+        </div>
         <div class="allActualites">
-            <div class="cardActualite" data-aos="fade-up" data-aos-duration="2000">
-                <img src="{{ asset('medias/images/competition/battlePass.jpg') }}" alt="Bannière nouvelle annonce">
-                <h3>GAGNEZ 50 EUROS PAYPAL + BATTLEPASS</h3>
-                <p>
-                    Organisé par la AnakinCorp, tirage au sort le 30 septembre 2021 sur le serveur <a href="">Discord</a>
-                </p>
-            </div>
-
-            <div class="cardActualite" data-aos="fade-down" data-aos-duration="2000">
-                <img src="{{ asset('medias/images/competition/battlePass.jpg') }}" alt="Bannière nouvelle annonce">
-                <h3>COMPETITION COLD WAR</h3>
-                <p>
-                    Organisé par la AnakinCorp, Jeudi 20 et vendredi 21 Juillet à 20H sur le serveur <a href="">Discord</a>
-                </p>
-            </div>
-
-            <div class="cardActualite" data-aos="fade-up" data-aos-duration="2000">
-                <img src="{{ asset('medias/images/competition/battlePass.jpg') }}" alt="Bannière nouvelle annonce">
-                <h3>COMPETITION TRIO APEX LEGENDS</h3>
-                <p>
-                    Organisé par la AnakinCorp, Lundi 17 Juillet à 21H sur le serveur <a href="">Discord</a>
-            </div>
-
-            <div class="cardActualite" data-aos="fade-down" data-aos-duration="2000">
-                <img src="{{ asset('medias/images/competition/battlePass.jpg') }}" alt="Bannière nouvelle annonce">
-                <h3>La AnakinCorp recrute !</h3>
-                <p>
-                    Nous sommes à la recherche d'un <b>community manager</b> pour postuler, rendez-vous sur notre serveur <a href="">Discord</a>
-                </p>
-            </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
-{% endblock %}
+    {% endblock %}
