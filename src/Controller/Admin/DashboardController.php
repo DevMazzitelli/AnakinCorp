@@ -52,5 +52,12 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Partenaire::class)->setAction(Crud::PAGE_NEW),
             ]
         );
+
+        yield MenuItem::subMenu('Streamers', 'fas fa-video')->setSubItems(
+            [
+                MenuItem::linkToCrud('Tous les streamers', 'fas fa-list', \App\Entity\Streamer::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', \App\Entity\Streamer::class)->setAction(Crud::PAGE_NEW),
+            ]
+        );
     }
 }

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\CompetitionRepository;
 use App\Repository\PartenaireRepository;
+use App\Repository\StreamerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,16 +12,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(CompetitionRepository $competitionRepository, PartenaireRepository $partenairesRepository): Response
+    public function index(CompetitionRepository $competitionRepository, PartenaireRepository $partenairesRepository, StreamerRepository $streamerRepository): Response
     {
         $competitions = $competitionRepository->findAll();
         $partenaires = $partenairesRepository->findAll();
+        $streamers = $streamerRepository->findAll();
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'competitions' => $competitions,
             'partenaires' => $partenaires,
-
+            'streamers' => $streamers,
         ]);
     }
 
