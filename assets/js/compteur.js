@@ -23,6 +23,7 @@ function gestionIntersection(entries, observer) {
         if (entry.isIntersecting) {
             // La div est maintenant visible dans la fenêtre
             // Appelez la fonction pour commencer l'incrémentation des compteurs
+            // TODO: Faire la modification via le pannel d'administration
             incrementerCompteur(compteurElement, 30, 40);
             incrementerCompteur(compteurElement2, 500, 0.1);
             incrementerCompteur(compteurElement3, 3, 400);

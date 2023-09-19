@@ -66,5 +66,11 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Ajouter', 'fas fa-plus', \App\Entity\Actualite::class)->setAction(Crud::PAGE_NEW),
             ]
         );
+
+        yield MenuItem::subMenu('Compteur')->setSubItems(
+            [
+                MenuItem::linkToCrud('Modifier', 'fas fa-edit', \App\Entity\Compteur::class)->setAction(Crud::PAGE_EDIT),
+            ]
+        );
     }
 }
