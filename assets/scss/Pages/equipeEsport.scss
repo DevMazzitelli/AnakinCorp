@@ -33,13 +33,12 @@
 
 
 .equipe {
-
-  margin-bottom: 100px;
+  margin-top: 1vh;
 
   h2 {
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 5vh;
     text-align: center;
   }
 
@@ -48,23 +47,23 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 20vw;
+    margin-right: 20vw;
 
     .cardEquipe {
       width: 100%;
       display: flex;
       justify-content: flex-end;
-      gap: 50px;
+      gap: 5vw;
     }
 
     .card {
-      width: 350px;
-      height: 500px;
-      margin-bottom: 50px;
+      width: 18vw;
+      height: 50vh;
+      margin-bottom: 5vh;
       border: 2px solid $last-color;
       border-radius: 5px;
-      overflow: hidden; /* Pour cacher le dépassement de contenu */
+      overflow: hidden;
       cursor: pointer;
     }
 
@@ -88,7 +87,7 @@
       background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le titre */
       color: white;
       text-align: center;
-      padding: 10px;
+      padding: 1vh;
       font-size: 1.5rem;
       font-weight: bold;
     }
@@ -103,14 +102,13 @@
         font-weight: bold;
         text-align: center;
         font-family : "Copperplate Gothic Bold", sans-serif;
-        margin-bottom: 10px;
+        margin-bottom: 1vh;
     }
      p {
-       // ecriture pour site gaming
-    font-size: 1.2rem;
-        margin-top: 5px;
-        margin-bottom: 50px;
-       line-height: 30px;
+       font-size: 1.2rem;
+       margin-top: 0.5vh;
+       margin-bottom: 5vh;
+       line-height: 3vh;
      }
   }
 }
