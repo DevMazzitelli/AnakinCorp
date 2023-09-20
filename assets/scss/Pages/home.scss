@@ -75,12 +75,18 @@ header {
         border-radius: 5px;
     }
 
+    nav {
+        @include desktop_1024 {
+            margin-left: 40vw;
+        }
+    }
     nav ul {
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex;
         cursor: pointer;
+
     }
 
     nav ul li {
@@ -94,6 +100,9 @@ header {
         text-decoration: none;
         color: $last-color;
         font-weight: bold;
+        @include desktop_1024 {
+            font-size: 0.8rem;
+        }
     }
 }
 
@@ -111,6 +120,14 @@ Bannière principale
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
+
+        @include desktop_1280 {
+            height: 95vh;
+        }
+
+        @include desktop_1024 {
+            height: 105vh;
+        }
     }
 
     #titrePrincipal {
@@ -132,7 +149,7 @@ Bannière principale
         }
 
         h2 {
-            font-size: 2vh;
+            font-size: 2.1vw;
             font-weight: bold;
         }
 
@@ -146,12 +163,22 @@ Bannière principale
             margin-right: 25vw;
             margin-top: 10vh;
             width: 40%;
+
+            @include desktop_1024 {
+                margin-left: 20vw;
+                width: 70%;
+            }
         }
 
         #textDeux {
             margin-left: 20vw;
             margin-top: 10vh;
             width: 40%;
+
+            @include desktop_1024 {
+                margin-left: 20vw;
+                width: 70%;
+            }
 
             a {
                 text-decoration: none;
@@ -176,6 +203,17 @@ Bannière principale
             margin-right: 60vh;
             cursor: pointer;
 
+            @include desktop_1536 {
+                margin-top: -10vh;
+                font-size: 1.1rem;
+            }
+
+            @include desktop_1280 {
+                margin-top: 10vh;
+                margin-left: 60vw;
+                font-size: 1rem;
+            }
+
             a {
                 color: white;
                 text-decoration: none;
@@ -192,6 +230,10 @@ Nos équipes
 
     margin-bottom: 1vw;
 
+    @include desktop_1024 {
+    margin-left: 10vw;
+    }
+
     h2 {
         font-size: 2rem;
         font-weight: bold;
@@ -207,6 +249,11 @@ Nos équipes
         justify-content: space-between;
         margin-left: 20%;
         margin-right: 20%;
+
+        @include desktop_1024 {
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
 
         .card {
             width: 18vw;
@@ -251,9 +298,13 @@ Equipe Esport
     position: relative; /* Ajoutez cette ligne pour définir le contexte de positionnement */
     margin-top: 15vh;
     img {
-        width: 100%;
+        width: 101.5vw;
         height: 50vh;
         object-fit: cover;
+
+        @include desktop_1024 {
+            width: 111vw;
+        }
     }
 
     .fenetre {
@@ -267,6 +318,13 @@ Equipe Esport
         border: 2px solid $last-color;
         opacity: 1;
         transition: opacity 3s ease-in-out;
+
+        @include desktop_1024 {
+            width: 30vw;
+            height: 70vh;
+            right: 5%;
+            bottom: -20%;
+        }
 
         .fenetre:hover {
             opacity: 2;
@@ -304,8 +362,8 @@ Equipe Esport
             .titleCompet {
                 position: absolute;
                 bottom: 0;
-                left: 0;
-                width: 100%;
+                left: 2.5vw;
+                width: 85%;
                 background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le titre */
                 color: white;
                 text-align: center;
@@ -346,11 +404,16 @@ Equipe Esport
     padding-top: 10vh;
     position: relative;
 
+    @include desktop_1024 {
+        padding-top: 15vh;
+    }
+
     h2 {
         font-size: 2rem;
         font-weight: bold;
         margin-bottom: 5vh;
         text-align: center;
+
     }
 
     .cardPartenaire {
@@ -362,11 +425,21 @@ Equipe Esport
         &.left-card {
             left: 10vw;
             top: 20vh;
+
+            @include desktop_1024 {
+                left: 15vw;
+                top: 25vh;
+            }
         }
 
         &.right-card {
             right: 10vw;
             top: 30vh;
+
+            @include desktop_1024 {
+                right: 5vw;
+                top: 35vh;
+            }
         }
 
 
@@ -388,6 +461,8 @@ Equipe Esport
 
     display: flex;
     justify-content: space-between;
+
+    // TODO: A modifier pour le responsive
 
     .cardTwitch {
         flex: 1;
@@ -527,11 +602,14 @@ Equipe Esport
 .compteur {
     .imgClavierGaming {
         position: relative;
-
         img {
             width: 100%;
             height: 40vh;
             object-fit: cover;
+
+            @include desktop_1280 {
+                width: 101.5vw;
+            }
         }
 
         .cardStats {
