@@ -17,17 +17,21 @@ function incrementerCompteur(compteurElement, nombreCible, vitesseIncrementation
     }, vitesseIncrementation);
 }
 
+
 // Fonction pour gérer l'intersection de la div avec la fenêtre
 function gestionIntersection(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // La div est maintenant visible dans la fenêtre
-            // Appelez la fonction pour commencer l'incrémentation des compteurs
-            // TODO: Faire la modification via le pannel d'administration
-            incrementerCompteur(compteurElement, 30, 40);
-            incrementerCompteur(compteurElement2, 500, 0.1);
-            incrementerCompteur(compteurElement3, 3, 400);
-            incrementerCompteur(compteurElement4, 6, 200);
+
+            fetch('https://127.0.0.1:8000/compteur')
+                .then(function (response) {
+                    return(response.json());
+                }) .then(function (data) {
+                incrementerCompteur(compteurElement, data['nbrJoueur'], (5000 / data['nbrJoueur']))
+                incrementerCompteur(compteurElement2, data['nbrMembre'], (5000 / data['nbrMembre']))
+                incrementerCompteur(compteurElement3, data['nbrEquipe'], (5000 / data['nbrEquipe']))
+                incrementerCompteur(compteurElement4, data['nbrStaff'], (5000 / data['nbrStaff']))
+            } );
 
             // Arrêtez de surveiller l'intersection une fois que le code est activé
             observer.unobserve(entry.target);

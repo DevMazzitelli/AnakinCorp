@@ -14,18 +14,18 @@ body {
     background-color: $main-color;
     color: $last-color;
     font-family: 'Oswald',Helvetica,Arial,Lucida,sans-serif;
+    overflow-x: hidden;
 }
 
 header {
-    height: 65px;
+    height: 7vh;
     width: 100%;
     background-color: $main-color;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Utilisez cette propriété pour aligner le contenu à gauche et à droite */
-    padding: 20px;
+    justify-content: space-between;
+    padding: 2vh;
     position: relative;
-
 
 
     #sub-menu {
@@ -35,14 +35,14 @@ header {
         left: 0;
         background-color: $main-color;
         width: 100%;
-        padding: 10px 0;
+        padding: 2vh 0;
 
         a {
             display: block;
             text-decoration: none;
             color: $last-color;
             font-weight: bold;
-            padding: 5px 20px;
+            padding: 1vh 5vh;
         }
     }
 
@@ -50,10 +50,10 @@ header {
     #nos-equipes:hover #sub-menu {
         display: flex;
         flex-direction: column;
-        position: absolute; /* Utilisez position absolue pour empêcher de pousser les éléments suivants */
-        top: 42px;
+        position: absolute;
+        top: 4.2vh;
         left: 69.5%;
-        width: 160px;
+        width: 10vw;
         background-color: white;
         z-index: 1;
 
@@ -61,7 +61,7 @@ header {
             color: $main-color;
 
             &:hover {
-                color: #3b82f6;
+                color: $discord-color;
             }
         }
     }
@@ -73,7 +73,6 @@ header {
         background-color: white;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0% 100%);
         border-radius: 5px;
-
     }
 
     nav ul {
@@ -85,8 +84,8 @@ header {
     }
 
     nav ul li {
-        margin: 10px;
-        margin-right: 20px;
+        margin: 1vh;
+        margin-right: 2vh;
         padding: 0;
         font-weight: bold;
     }
@@ -107,65 +106,66 @@ Bannière principale
     display: flex;
 
     #imgEsport {
-        width: 45%;
-        height: 900px;
+        width: 45vw;
+        height: 93vh;
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
     }
 
     #titrePrincipal {
-        width: 55%;
-        height: 900px;
+        width: 55vw;
+        height: 30vh;
         background-color: $main-color;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 100px;
+        margin-top: 10vh;
 
 
         h1 {
-            font-size: 3rem;
+            font-size: 3vw;
             font-weight: bold;
-            margin-bottom: 2rem;
-            margin-left: 150px;
+            margin-bottom: 3vh;
+            margin-left: 5vw;
             text-decoration: underline;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 2vh;
             font-weight: bold;
         }
 
         .borderBottom {
             border-bottom: 5px solid $last-color;
-            width: 250px;
-            margin-right: 670px;
+            width: 15vw;
+            margin-right: 30vw;
         }
 
         #textUn {
-            margin-right: 500px;
-            margin-top: 100px;
+            margin-right: 25vw;
+            margin-top: 10vh;
             width: 40%;
         }
 
         #textDeux {
-            margin-left: 500px;
-            margin-top: 100px;
+            margin-left: 20vw;
+            margin-top: 10vh;
             width: 40%;
 
             a {
                 text-decoration: none;
-                color: #3b82f6;
+                color: $discord-color;
                 font-weight: bold;
             }
         }
 
         .buttonA {
-            width: 170px;
-            height: 50px;
+            width: 10vw;
+            height: 6vh;
+            padding: 5px;
             background-color: $main-color;
-            font-size: 20px;
+            font-size: 1.5rem;
             font-weight: bold;
             border: 3px solid $last-color;
             border-radius: 5px;
@@ -173,8 +173,7 @@ Bannière principale
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
-            margin-right: 600px;
+            margin-right: 60vh;
             cursor: pointer;
 
             a {
@@ -191,12 +190,13 @@ Nos équipes
 
 .nosEquipes {
 
-    margin-bottom: 100px;
+    margin-bottom: 1vw;
 
     h2 {
         font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 50px;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
         text-align: center;
     }
 
@@ -209,8 +209,8 @@ Nos équipes
         margin-right: 20%;
 
         .card {
-            width: 350px;
-            height: 500px;
+            width: 18vw;
+            height: 50vh;
             border: 2px solid $last-color;
             border-radius: 5px;
             overflow: hidden; /* Pour cacher le dépassement de contenu */
@@ -236,7 +236,7 @@ Nos équipes
             background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le titre */
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 0.5rem;
             font-size: 1.5rem;
             font-weight: bold;
         }
@@ -247,12 +247,12 @@ Nos équipes
 Equipe Esport
  */
 
-.equipeEsport {
+.competitionEsport {
     position: relative; /* Ajoutez cette ligne pour définir le contexte de positionnement */
-
+    margin-top: 15vh;
     img {
         width: 100%;
-        height: 500px;
+        height: 50vh;
         object-fit: cover;
     }
 
@@ -260,10 +260,10 @@ Equipe Esport
         position: absolute; /* Positionnement absolu par rapport au parent .equipeEsport */
         background-color: #000209;
         border-radius: 5px;
-        width: 500px;
-        height: 600px;
-        right: 300px; /* Ajustez la valeur pour définir la distance depuis le bord droit */
-        margin-top: -550px;
+        width: 27vw;
+        height: 65vh;
+        right: 10%;
+        bottom: -10%;
         border: 2px solid $last-color;
         opacity: 1;
         transition: opacity 3s ease-in-out;
@@ -276,12 +276,12 @@ Equipe Esport
             color: $last-color;
             font-family: Calibri;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 2vh;
             border-bottom: 2px solid $main-color;
             border-bottom-style: dashed;
             // Mettre de l'espace entre mon border
-            padding-bottom: 10px;
-            width: 80%;
+            padding-bottom: 1vh;
+            width: 20vw;
             margin-left: auto;
             margin-right: auto;
         }
@@ -291,9 +291,9 @@ Equipe Esport
 
 
             img {
-                margin-top: 20px;
+                margin-top: 2vh;
                 width: 80%;
-                height: 150px;
+                height: 15vh;
                 // Centrer mon image
                 display: block;
                 margin-left: auto;
@@ -309,65 +309,65 @@ Equipe Esport
                 background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le titre */
                 color: white;
                 text-align: center;
-                padding: 10px;
+                padding: 0.5vh;
                 font-size: 1.5rem;
                 font-weight: bold;
             }
         }
         .dateCompet {
             position: absolute;
-            top: 50%; /* Centrez verticalement la date */
-            left: 50%; /* Centrez horizontalement la date */
+            top: 50%;
+            left: 50%;
             width: 80%;
-            height: 150px;
-            transform: translate(-50%, -50%); /* Ajustez la position */
+            height: 15vh;
+            transform: translate(-50%, -50%);
             background-color: #000209;
             border: 1px solid white;
             opacity: 0;
             border-radius: 5px;
             color: white;
             text-align: center;
-            padding: 40px;
+            padding: 2vh 3vw;
             font-size: 1.5rem;
             font-weight: bold;
-            display: none; /* Masquez la date par défaut */
+            display: none;
             transition: opacity 3s ease-in-out;
         }
 
         .imageCompet:hover .dateCompet {
-            display: block; /* Affichez la date au survol de la carte */
+            display: block;
             opacity: 1;
+            padding-top: 4.5vh;
         }
     }
 }
 
 .partenaire {
-    padding-top: 100px;
-    position: relative; /* Permet de positionner les cartes de manière absolue par rapport à ce conteneur */
+    padding-top: 10vh;
+    position: relative;
 
     h2 {
         font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 50px;
+        margin-bottom: 5vh;
         text-align: center;
     }
 
     .cardPartenaire {
-        width: 550px;
-        height: 200px;
+        width: 30vw;
+        height: 20vh;
         border: 2px solid $last-color;
-        position: absolute; /* Position absolue par rapport au conteneur parent */
+        position: absolute;
 
         &.left-card {
-            left: 150px; /* Positionne la carte de gauche à gauche du conteneur parent */
-            top: 200px; /* Positionne la carte de gauche en haut du conteneur parent */
+            left: 10vw;
+            top: 20vh;
         }
 
         &.right-card {
-            right: 150px; /* Positionne la carte de droite à droite du conteneur parent */
-            top: 300px; /* Positionne la carte de droite légèrement en bas de celle de gauche */
+            right: 10vw;
+            top: 30vh;
         }
-
 
 
         img {
@@ -379,7 +379,7 @@ Equipe Esport
 }
 
 .twitch {
-    margin-top: 450px;
+    margin-top: 55vh;
     background-color: #000000;
     background-image: -webkit-linear-gradient(180deg, #000000 0%, #5b21b6 100%);
     background-image: -moz-linear-gradient(180deg, #000000 0%, #5b21b6 100%);
@@ -394,13 +394,7 @@ Equipe Esport
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px;
-
-        h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 50px;
-        }
+        padding: 2vh 2vw;
 
         .cardStreamerAll {
             display: flex;
@@ -408,8 +402,8 @@ Equipe Esport
             align-items: center;
 
             .twitchLogo  img{
-                width: 200px;
-                margin-bottom: 20px;
+                width: 12vw;
+                margin-bottom: 2vh;
                 animation: jump 2s infinite;
             }
 
@@ -422,23 +416,23 @@ Equipe Esport
                 position: relative; /* Assurez-vous que la carte a une position relative pour positionner le nom du streamer par rapport à la carte */
 
                 p {
-                    font-size: 30px;
+                    font-size: 3vh;
                 }
 
                 img {
                     border: 2px solid $last-color;
-                    margin: 10px 200px;
+                    margin: 1vh 10vw;
                 }
 
                 .nameStreamer {
                     position: absolute;
-                    top: 50%; /* Positionnez le nom verticalement au centre de la carte */
-                    left: 50%; /* Positionnez le nom horizontalement au centre de la carte */
-                    transform: translate(-50%, -50%); /* Pour centrer parfaitement le nom */
-                    background-color: rgba(0, 0, 0, 0.5); /* Fond avec opacité de 0.5 */
-                    color: white; /* Couleur du texte */
-                    padding: 5px 10px; /* Espacement autour du texte */
-                    border-radius: 5px; /* Coins arrondis */
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    color: white;
+                    padding: 0.5vh 1vw;
+                    border-radius: 5px;
                     display: none;
                 }
             }
@@ -466,8 +460,8 @@ Equipe Esport
 
 
 .actualites {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 7vh;
+    margin-bottom: 5vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -476,58 +470,58 @@ Equipe Esport
     h2 {
         font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 50px;
+        margin-bottom: 5vh;
         text-align: center;
     }
-}
 
-.allActualites {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Espace égal entre les cartes */
-    width: 100%;
-    margin-left: 200px;
-    margin-right: 200px;
-
-}
-
-.cardActualite {
-    width: 500px;
-    height: 350px;
-    flex: 1; /* Chaque carte prendra une partie égale de l'espace disponible sur la ligne */
-    margin: 20px;
-    max-width: calc(25% - 50px); /* Limite à 4 cartes par ligne avec un espace de 20px de chaque côté */
-    border-radius: 5px;
-    background-color: $last-color;
-    overflow: hidden; /* Pour cacher le dépassement de contenu */
-    box-sizing: border-box; /* Empêche le dépassement de la largeur maximale en raison de la bordure */
-    color: $main-color;
-    -webkit-box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.6);
-    box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.4);
-    padding-bottom: 5px;
-
-    img {
+    .allActualites {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Espace égal entre les cartes */
         width: 100%;
-        height: 60%;
+        margin-left: 10vw;
+        margin-right: 10vw;
     }
 
-    h3 {
-        margin-top: 10px;
-        margin-left: 10px;
-        font-size: 17.5px;
-    }
+    .cardActualite {
+        width: 25vw;
+        height: 35vh;
+        flex: 1; /* Chaque carte prendra une partie égale de l'espace disponible sur la ligne */
+        margin: 2vw;
+        max-width: calc(25% - 50px); /* Limite à 4 cartes par ligne avec un espace de 20px de chaque côté */
+        border-radius: 5px;
+        background-color: $last-color;
+        overflow: hidden; /* Pour cacher le dépassement de contenu */
+        box-sizing: border-box; /* Empêche le dépassement de la largeur maximale en raison de la bordure */
+        color: $main-color;
+        -webkit-box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.6);
+        box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.4);
+        padding-bottom: 1vh;
 
-    p {
-        margin-top: 10px;
-        margin-left: 10px;
-        font-size: 15px;
+        img {
+            width: 100%;
+            height: 60%;
+        }
 
-        a {
-            text-decoration: none;
-            color: #3b82f6;
-            font-weight: bold;
+        h3 {
+            margin-top: 1vh;
+            margin-left: 0.5vw;
+            font-size: 0.8vw;
+        }
+
+        p {
+            margin-top: 1vh;
+            margin-left: 0.5vw;
+            font-size: 0.7vw;
+
+            a {
+                text-decoration: none;
+                color: $discord-color;
+                font-weight: bold;
+            }
         }
     }
+
 }
 
 .compteur {
@@ -536,17 +530,17 @@ Equipe Esport
 
         img {
             width: 100%;
-            height: 400px;
+            height: 40vh;
             object-fit: cover;
         }
 
         .cardStats {
             background-color: white;
-            width: 200px;
-            height: 200px;
-            display: flex; /* Ajout pour activer le mode flex */
-            flex-direction: column; /* Pour que le texte soit centré verticalement */
-            justify-content: center; /* Pour que le texte soit centré verticalement */
+            width: 10vw;
+            height: 10vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
             p {
                 color: $main-color;
@@ -567,8 +561,8 @@ Equipe Esport
         position: absolute;
         top: 25%;
         width: 100%;
-        padding-left: 200px;
-        padding-right: 200px;
+        padding-left: 10vw;
+        padding-right: 10vw;
         opacity: 0.8;
     }
 }
