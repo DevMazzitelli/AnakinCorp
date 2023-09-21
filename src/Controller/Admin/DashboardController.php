@@ -78,7 +78,7 @@ class DashboardController extends AbstractDashboardController
             ]
         );
 
-        yield MenuItem::subMenu('Compteur')->setSubItems(
+        yield MenuItem::subMenu('Compteur', 'fa-solid fa-calculator')->setSubItems(
             [
                 MenuItem::linkToCrud('Compteur Actuel', 'fas fa-list', \App\Entity\Compteur::class),
                 MenuItem::linkToCrud('Ajouter', 'fas fa-edit', \App\Entity\Compteur::class)->setAction(Crud::PAGE_EDIT),
