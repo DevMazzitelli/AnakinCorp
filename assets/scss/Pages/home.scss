@@ -17,6 +17,11 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 header {
     height: 7vh;
     width: 100%;
@@ -76,9 +81,7 @@ header {
     }
 
     nav {
-        @include desktop_1024 {
-            margin-left: 40vw;
-        }
+
     }
     nav ul {
         list-style: none;
@@ -125,9 +128,12 @@ Bannière principale
             height: 95vh;
         }
 
-        @include desktop_1024 {
-            height: 105vh;
-        }
+    }
+
+    .displayNone {
+       @media screen and (max-width: 768px) {
+           display: none;
+       }
     }
 
     #titrePrincipal {
@@ -146,6 +152,7 @@ Bannière principale
             margin-bottom: 3vh;
             margin-left: 5vw;
             text-decoration: underline;
+
         }
 
         h2 {
@@ -176,7 +183,7 @@ Bannière principale
             width: 40%;
 
             @include desktop_1024 {
-                margin-left: 20vw;
+                margin-left: 10vw;
                 width: 70%;
             }
 
@@ -212,6 +219,12 @@ Bannière principale
                 margin-top: 10vh;
                 margin-left: 60vw;
                 font-size: 1rem;
+            }
+
+            @include desktop_1024 {
+                margin-top: 5vh;
+                margin-left: 50vw;
+                font-size: 0.9rem;
             }
 
             a {
@@ -291,20 +304,18 @@ Nos équipes
 }
 
 /*
-Equipe Esport
+EquipeRocket Esport
  */
 
 .competitionEsport {
     position: relative; /* Ajoutez cette ligne pour définir le contexte de positionnement */
     margin-top: 15vh;
+    width: 100%;
+
     img {
-        width: 101.5vw;
+        width: 100%;
         height: 50vh;
         object-fit: cover;
-
-        @include desktop_1024 {
-            width: 111vw;
-        }
     }
 
     .fenetre {
@@ -537,57 +548,58 @@ Equipe Esport
 .actualites {
     margin-top: 7vh;
     margin-bottom: 5vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 
     h2 {
         font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 5vh;
-        text-align: center;
+        margin-bottom: 2vh;
     }
 
     .allActualites {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between; /* Espace égal entre les cartes */
-        width: 100%;
-        margin-left: 10vw;
-        margin-right: 10vw;
+        justify-content: center;
+        gap: 2rem;
     }
 
     .cardActualite {
-        width: 25vw;
-        height: 35vh;
-        flex: 1; /* Chaque carte prendra une partie égale de l'espace disponible sur la ligne */
-        margin: 2vw;
-        max-width: calc(25% - 50px); /* Limite à 4 cartes par ligne avec un espace de 20px de chaque côté */
-        border-radius: 5px;
+        width: 300px;
+        border-radius: 10px;
         background-color: $last-color;
-        overflow: hidden; /* Pour cacher le dépassement de contenu */
-        box-sizing: border-box; /* Empêche le dépassement de la largeur maximale en raison de la bordure */
-        color: $main-color;
-        -webkit-box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.6);
-        box-shadow: 0px 0px 8px 3px rgba(255,255,255,0.4);
-        padding-bottom: 1vh;
+        overflow: hidden;
+        box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.2);
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease-in-out;
 
-        img {
-            width: 100%;
-            height: 60%;
+        &:hover {
+            transform: scale(1.05); /* Add a hover effect */
         }
 
-        h3 {
-            margin-top: 1vh;
-            margin-left: 0.5vw;
-            font-size: 0.8vw;
+        .card-image {
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
 
-        p {
-            margin-top: 1vh;
-            margin-left: 0.5vw;
-            font-size: 0.7vw;
+        .card-content {
+            padding: 1rem;
+            text-align: left;
+
+            h3 {
+                color: $main-color;
+                font-size: 1rem;
+                font-weight: bold;
+                margin-top: 0.2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: $main-color;
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
 
             a {
                 text-decoration: none;
@@ -596,20 +608,18 @@ Equipe Esport
             }
         }
     }
-
 }
+
 
 .compteur {
     .imgClavierGaming {
         position: relative;
+        width: 100%;
         img {
             width: 100%;
             height: 40vh;
             object-fit: cover;
 
-            @include desktop_1280 {
-                width: 101.5vw;
-            }
         }
 
         .cardStats {
@@ -620,11 +630,20 @@ Equipe Esport
             flex-direction: column;
             justify-content: center;
 
+            @include desktop_1024 {
+                width: 15vw;
+                height: 15vw;
+            }
+
             p {
                 color: $main-color;
                 opacity: 1;
                 font-size: 1.5rem;
                 text-align: center; /* Centrer le texte horizontalement */
+
+                @include desktop_1024 {
+                    font-size: 1.2rem;
+                }
             }
 
             .number {

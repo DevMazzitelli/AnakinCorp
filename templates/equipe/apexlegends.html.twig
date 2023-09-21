@@ -9,85 +9,47 @@
         <div class="equipe">
             <h2>Apex Legends</h2>
             <div class="allCard">
-
-                <div class="cardEquipe">
-                    <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="image">
-                            <img src="{{ asset('./assets/medias/images/portraitTrois.jpg') }}" alt="Équipe Apex">
-                            <h3 class="title">Capitaine : Luna Alamel</h3>
+                {% for equipeApexLegends in equipeApexLegends %}
+                    {% if loop.index is odd %}
+                        <div class="cardEquipe" id="equipe{{ loop.index }}">
+                            <div class="card" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="image">
+                                    <img src="{{ asset('medias/images/equipeApexLegends/' ~ equipeApexLegends.images) }}" alt="Équipe Apex">
+                                    <h3 class="title">{{ equipeApexLegends.id == 1 ? 'Capitaine' : 'Joueur 3' }} : {{ equipeApexLegends.firstname }} {{ equipeApexLegends.lastname }}</h3>
+                                </div>
+                            </div>
+                            <div class="description" data-aos="fade-right">
+                                <h3>Présentation IRL</h3>
+                                <p>
+                                    {{ equipeApexLegends.presentationIRL }}
+                                </p>
+                                <h3>Présentation IG</h3>
+                                <p>
+                                    {{ equipeApexLegends.presentationIG }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="description" data-aos="fade-right">
-                        <h3>Présentation IRL</h3>
-                        <p>
-                            Luna Alamel, notre capitaine intrépide, est une véritable passionnée d'Apex Legends. En dehors du jeu, Luna est une artiste talentueuse et une mordue de musique.
-                        </p>
-                        <h3>Présentation IG</h3>
-                        <p>
-                            Sur le champ de bataille, Luna est réputée pour sa précision diabolique et sa capacité à remporter des victoires spectaculaires. Elle est un leader naturel et sait comment maintenir la cohésion de l'équipe, même dans les situations les plus tendues.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="cardEquipe">
-                    <div class="description" data-aos="fade-left">
-                        <h3>Présentation IRL</h3>
-                        <p>
-                            Bobo Aldiente, notre joueur n°2, est un compétiteur féroce. En dehors du jeu, il est un passionné de cuisine et adore expérimenter de nouvelles recettes.
-                        </p>
-                        <h3>Présentation IG</h3>
-                        <p>
-                            En jeu, Bobo excelle dans le rôle de support en tant que défenseur solide et expert en passes décisives. Son sens du placement et ses réflexes rapides sont des atouts majeurs pour notre équipe.
-                        </p>
-                    </div>
-                    <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="image">
-                            <img src="{{ asset('assets/medias/images/portraitUn.jpg') }}" alt="Équipe Apex">
-                            <h3 class="title">Joueur 2 : Bobo Aldiente</h3>
+                    {% else %}
+                        <div class="cardEquipe" id="equipe{{ loop.index }}">
+                            <div class="description" data-aos="fade-right">
+                                <h3>Présentation IRL</h3>
+                                <p>
+                                    {{ equipeApexLegends.presentationIRL }}
+                                </p>
+                                <h3>Présentation IG</h3>
+                                <p>
+                                    {{ equipeApexLegends.presentationIG }}
+                                </p>
+                            </div>
+                            <div class="card" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="image">
+                                    <img src="{{ asset('medias/images/equipeApexLegends/' ~ equipeApexLegends.images) }}" alt="Équipe Apex">
+                                    <h3 class="title">{{ equipeApexLegends.id == 2 ? 'Joueur 2' : 'Coach' }} : {{ equipeApexLegends.firstname }} {{ equipeApexLegends.lastname }}</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-
-                <div class="cardEquipe">
-                    <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="image">
-                            <img src="{{ asset('./assets/medias/images/portraitQuatre.jpg') }}" alt="Équipe Apex">
-                            <h3 class="title">Joueur 3 : Emma Courtoise</h3>
-                        </div>
-                    </div>
-                    <div class="description" data-aos="fade-right">
-                        <h3>Présentation IRL</h3>
-                        <p>
-                            Emma Courtoise, notre joueur n°3, est une joueuse passionnée d'Apex Legends. En dehors des sessions de jeu, elle est une fervente défenseure de l'environnement et s'engage activement pour des causes écologiques.
-                        </p>
-                        <h3>Présentation IG</h3>
-                        <p>
-                            Dans le jeu, Emma est reconnue pour sa maîtrise des positions défensives et sa capacité à créer des opportunités stratégiques pour l'équipe. Elle excelle dans la coordination d'équipe et sait comment tirer le meilleur parti des avantages du rôle d'anchor.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="cardEquipe">
-                    <div class="description" data-aos="fade-left">
-                        <h3>Présentation IRL</h3>
-                        <p>
-                            KiluCru Lustucru, notre coach, est un véritable passionné d'Apex Legends. Avant de devenir coach, il a lui-même été un joueur accompli, ayant gravé son nom dans l'histoire du jeu. En dehors des sessions d'entraînement, il aime explorer de nouvelles saveurs culinaires et partager ses découvertes gastronomiques avec l'équipe.
-                        </p>
-                        <h3>Présentation IG</h3>
-                        <p>
-                            En tant que coach, KiluCru apporte une perspective stratégique essentielle à notre équipe, basée sur sa propre expérience en tant que joueur. Son expertise en analyse de jeu et ses conseils avisés, forgés au fil de nombreuses batailles sur le terrain, ont grandement contribué à notre succès. Il sait comment tirer le meilleur parti de chaque joueur grâce à son expérience précieuse.
-                        </p>
-                    </div>
-                    <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="image">
-                            <img src="{{ asset('assets/medias/images/portraitDeux.jpg') }}" alt="Équipe Apex">
-                            <h3 class="title">Coach : KiluCru Lustucru</h3>
-                        </div>
-                    </div>
-                </div>
-
-
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

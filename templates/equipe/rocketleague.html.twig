@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
-{% block title %}
 
+{% block title %}
+    Equipe Rocket League
 {% endblock %}
 
 {% block equipeRocketLeague %}
@@ -8,87 +9,48 @@
         <div class="equipe">
             <h2>Rocket League</h2>
             <div class="allCard">
-
-                <div class="cardEquipe">
-                    <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="image">
-                            <img src="{{ asset('./assets/medias/images/portraitUn.jpg') }}" alt="Équipe Apex">
-                            <h3 class="title">Capitaine : Luna Alamel</h3>
+                {% for equipeRocket in equipeRocket %}
+                    {% if loop.index is odd %}
+                        <div class="cardEquipe" id="equipe{{ loop.index }}">
+                            <div class="card" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="image">
+                                    <img src="{{ asset('medias/images/equipeRocket/' ~ equipeRocket.images) }}" alt="Équipe Apex">
+                                    <h3 class="title">{{ equipeRocket.id == 1 ? 'Capitaine' : 'Joueur 3' }} : {{ equipeRocket.firstname }} {{ equipeRocket.lastname }}</h3>
+                                </div>
+                            </div>
+                            <div class="description" data-aos="fade-right">
+                                <h3>Présentation IRL</h3>
+                                <p>
+                                    {{ equipeRocket.presentationIRL }}
+                                </p>
+                                <h3>Présentation IG</h3>
+                                <p>
+                                    {{ equipeRocket.presentationIG }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="description" data-aos="fade-right">
-                        <h3>Présentation IRL</h3>
-                        <p>
-                            Luna Alamel est notre capitaine intrépide. Elle est passionnée par Rocket League depuis son plus jeune âge et est un atout précieux pour notre équipe. En dehors du jeu, Luna est une artiste talentueuse et une mordue de musique.
-                        </p>
-                        <h3>Présentation IG</h3>
-                        <p>
-                            Sur le terrain, Luna est connue pour sa précision diabolique et sa capacité à marquer des buts spectaculaires. Elle est un leader naturel et sait comment maintenir l'esprit d'équipe dans les moments difficiles.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="cardEquipe">
-                    <div class="description" data-aos="fade-left">
-                        <h3>Présentation IRL</h3>
-                        <p>
-                            Bobo Aldiente, notre joueur n°2, est un compétiteur féroce. En dehors du jeu, il est un passionné de cuisine et adore expérimenter de nouvelles recettes.
-                        </p>
-                        <h3>Présentation IG</h3>
-                        <p>
-                            En jeu, Bobo est un défenseur solide et un expert en passes décisives. Son sens du placement et ses réflexes rapides sont des atouts majeurs pour notre équipe.
-                        </p>
-                    </div>
-                    <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="image">
-                            <img src="{{ asset('assets/medias/images/portraitDeux.jpg') }}" alt="Équipe Apex">
-                            <h3 class="title">Joueur 2 : Bobo Aldiente</h3>
+                    {% else %}
+                        <div class="cardEquipe" id="equipe{{ loop.index }}">
+                            <div class="description" data-aos="fade-right">
+                                <h3>Présentation IRL</h3>
+                                <p>
+                                    {{ equipeRocket.presentationIRL }}
+                                </p>
+                                <h3>Présentation IG</h3>
+                                <p>
+                                    {{ equipeRocket.presentationIG }}
+                                </p>
+                            </div>
+                            <div class="card" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="image">
+                                    <img src="{{ asset('medias/images/equipeRocket/' ~ equipeRocket.images) }}" alt="Équipe Apex">
+                                    <h3 class="title">{{ equipeRocket.id == 2 ? 'Joueur 2' : 'Coach' }} : {{ equipeRocket.firstname }} {{ equipeRocket.lastname }}</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="cardEquipe">
-                    <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="image">
-                            <img src="{{ asset('./assets/medias/images/portraitTrois.jpg') }}" alt="Équipe Apex">
-                            <h3 class="title">Joueur 3 : Emma Courtoise</h3>
-                        </div>
-                    </div>
-                    <div class="description" data-aos="fade-right">
-                        <h3>Présentation IRL</h3>
-                        <p>
-                            Emma Courtoise, notre joueur n°3, est une joueuse passionnée de Rocket League. En dehors des terrains virtuels, elle est une fervente défenseure de l'environnement et s'engage activement pour des causes écologiques.
-                        </p>
-                        <h3>Présentation IG</h3>
-                        <p>
-                            Dans le jeu, Emma est reconnue pour sa maîtrise des dribbles et des passes millimétrées. Elle excelle dans la coordination d'équipe et sait créer des opportunités de but impressionnantes.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="cardEquipe">
-                    <div class="description" data-aos="fade-left">
-                        <h3>Présentation IRL</h3>
-                        <p>
-                            KiluCru Lustucru, notre coach, est un véritable passionné de Rocket League. En dehors des sessions d'entraînement, il aime explorer de nouvelles saveurs culinaires et partager ses découvertes gastronomiques avec l'équipe.
-                        </p>
-                        <h3>Présentation IG</h3>
-                        <p>
-                            En tant que coach, KiluCru apporte une perspective stratégique essentielle à notre équipe. Son expertise en analyse de jeu et ses conseils avisés ont grandement contribué à notre succès sur le terrain. Il sait comment tirer le meilleur parti de chaque joueur.
-                        </p>
-                    </div>
-                    <div class="card" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="image">
-                            <img src="{{ asset('assets/medias/images/portraitQuatre.jpg') }}" alt="Équipe Apex">
-                            <h3 class="title">Coach : KiluCru Lustucru</h3>
-                        </div>
-                    </div>
-                </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
-
 {% endblock %}
-
-
-

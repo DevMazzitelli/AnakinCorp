@@ -49,6 +49,14 @@ class DashboardController extends AbstractDashboardController
             ]
         );
 
+        yield MenuItem::subMenu('Equipe Esport', 'fas fa-users')->setSubItems(
+            [
+                MenuItem::linkToCrud('Team Rocket League', 'fas fa-list', \App\Entity\EquipeRocket::class),
+                MenuItem::linkToCrud('Team Call of Duty', 'fas fa-list', \App\Entity\EquipeCallOfDuty::class),
+                MenuItem::linkToCrud('Team Apex Legends', 'fas fa-list', \App\Entity\EquipeApexLegends::class),
+            ]
+        );
+
         yield MenuItem::subMenu('Partenaires', 'fas fa-handshake')->setSubItems(
             [
                 MenuItem::linkToCrud('Tous les partenaires', 'fas fa-list', Partenaire::class),

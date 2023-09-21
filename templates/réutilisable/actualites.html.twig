@@ -1,25 +1,19 @@
 {% block actualites %}
-<div class="actualites">
-    <h2>NOS ACTUALITÉS</h2>
-    <div class="allActualites">
-        {% set actualitesPerRow = 4 %}
-        {% set actualiteCount = 0 %}
-        {% for actualite in actualites %}
-        {% if loop.index is even %}
-        <div class="cardActualite" data-aos="fade-up" data-aos-duration="2000">
-            {% else %}
-            <div class="cardActualite" data-aos="fade-down" data-aos-duration="2000">
-                {% endif %}
-                <img src="{{ asset('medias/images/actualite/' ~ actualite.images) }}" alt="Bannière nouvelle annonce">
-                <h3>{{ actualite.title }}</h3>
-                <p>{{ actualite.description }}</p>
-                <p>Rendez-vous sur le <a href="{{ actualite.link }}">Discord</a></p>
-            </div>
-            {% set actualiteCount = actualiteCount + 1 %}
-            {% if actualiteCount == actualitesPerRow %}
-            {% set actualiteCount = 0 %}
+    <div class="actualites">
+        <h2>NOS ACTUALITÉS</h2>
+        <div class="allActualites">
+            {% for actualite in actualites %}
+                <div class="cardActualite" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="card-image">
+                        <img src="{{ asset('medias/images/actualite/' ~ actualite.images) }}" alt="Bannière nouvelle annonce">
+                    </div>
+                    <div class="card-content">
+                        <h3>{{ actualite.title }}</h3>
+                        <p>{{ actualite.description }}</p>
+                        <p>Rendez-vous sur le <a href="{{ actualite.link }}">Discord</a></p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-            {% endif %}
-        {% endfor %}
     </div>
-    {% endblock %}
+{% endblock %}
