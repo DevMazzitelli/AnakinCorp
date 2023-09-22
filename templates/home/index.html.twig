@@ -115,8 +115,7 @@
                 <div class="streamerPartenaire">
                     {% for streamer in streamers %}
                         {% if streamer.id in [2, 3] %}
-                            <div class="cardStreamer"
-                                 data-aos="{% if streamer.id == 3 %}fade-left{% elseif streamer.id == 2 %}fade-right{% else %}fade-down{% endif %}"  data-aos-duration="2000">
+                            <div class="cardStreamer" data-aos="{% if streamer.id == 3 %}fade-left{% elseif streamer.id == 2 %}fade-right{% else %}fade-down{% endif %}"  data-aos-duration="2000">
                                 <a href="{{ streamer.link }}" class="streamer-link">
                                     <img src="{{ asset('medias/images/streamer/' ~ streamer.images) }}" alt="Twitch de la AnakinCorp">
                                     <p class="nameStreamer">{{ streamer.name }}</p>

@@ -32,7 +32,6 @@ header {
     padding: 2vh;
     position: relative;
 
-
     #sub-menu {
         display: none;
         position: absolute;
@@ -78,14 +77,18 @@ header {
         background-color: white;
         clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0% 100%);
         border-radius: 5px;
+
+        @include mobile_S {
+            margin-top: 2vh;
+        }
     }
 
     nav {
         @include tablette {
             display: none;
         }
-
     }
+
     nav ul {
         list-style: none;
         padding: 0;
@@ -166,6 +169,10 @@ Bannière principale
                 margin-left: auto;
                 margin-right: auto;
             }
+
+            @include mobile_M {
+                font-size: 2rem;
+            }
         }
 
         h2 {
@@ -175,6 +182,14 @@ Bannière principale
             @include tablette {
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            @include mobile_M {
+                font-size: 2rem;
+            }
+
+            @include mobile_S {
+                margin-top: 2vh;
             }
         }
 
@@ -187,6 +202,14 @@ Bannière principale
                 margin-left: auto;
                 margin-right: auto;
                 width: 40vw;
+            }
+
+            @include mobile_M {
+                width: 50vw;
+            }
+
+            @include mobile_S {
+                width: 80vw;
             }
         }
 
@@ -224,13 +247,16 @@ Bannière principale
                 width: 80%;
             }
 
+            @include mobile_S {
+                margin-top: 2vh;
+            }
+
             a {
                 text-decoration: none;
                 color: $discord-color;
                 font-weight: bold;
             }
         }
-
 
         .buttonA {
             width: 10vw;
@@ -300,12 +326,24 @@ Nos équipes
         margin-right: auto;
     }
 
+    @include mobile_M {
+        margin-top: 30vh;
+    }
+
+    @include mobile_S {
+        margin-top: 70vh;
+    }
+
     h2 {
         font-size: 2rem;
         font-weight: bold;
         margin-top: 3vh;
         margin-bottom: 3vh;
         text-align: center;
+
+        @include mobile_S {
+            font-size: 2.3rem;
+        }
     }
 
     .allCard {
@@ -320,6 +358,9 @@ Nos équipes
             margin-left: 10vw;
             margin-right: 10vw;
         }
+        @include mobile_M {
+            flex-direction: column;
+        }
 
         .card {
             width: 18vw;
@@ -332,18 +373,24 @@ Nos équipes
                 width: 25vw;
                 height: 40vh;
             }
+
+            @include mobile_M {
+                width: 70vw;
+                height: 30vh;
+                margin-top: 1vh;
+            }
         }
 
         .image {
             width: 100%;
             height: 100%;
-            position: relative; /* Pour positionner le titre par rapport à l'image */
+            position: relative;
         }
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ajustement de l'image pour remplir la div sans déformation */
+            object-fit: cover;
         }
 
         .title {
@@ -378,10 +425,18 @@ EquipeRocket Esport
         @include tablette {
             height: 30vh;
         }
+
+        @include tablette {
+            margin-top: 3vh;
+        }
+
+        @include mobile_M {
+            height: 40vh;
+        }
     }
 
     .fenetre {
-        position: absolute; /* Positionnement absolu par rapport au parent .equipeEsport */
+        position: absolute;
         background-color: #000209;
         border-radius: 5px;
         width: 27vw;
@@ -397,6 +452,24 @@ EquipeRocket Esport
             height: 70vh;
             right: 5%;
             bottom: -20%;
+        }
+
+        @include tablette {
+            width: 40vw;
+            height: 63vh;
+            right: 30%;
+            top: -10vh;
+        }
+
+        @include mobile_M {
+            width: 80vw;
+            height: 63vh;
+            right: 10%;
+            top: -10vh;
+        }
+
+        @include mobile_S {
+            height: 65vh;
         }
 
         .fenetre:hover {
@@ -415,6 +488,10 @@ EquipeRocket Esport
             width: 20vw;
             margin-left: auto;
             margin-right: auto;
+
+            @include mobile_M {
+                width: 50vw;
+            }
         }
 
         .imageCompet {
@@ -425,7 +502,6 @@ EquipeRocket Esport
                 margin-top: 2vh;
                 width: 80%;
                 height: 15vh;
-                // Centrer mon image
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
@@ -463,6 +539,18 @@ EquipeRocket Esport
             font-weight: bold;
             display: none;
             transition: opacity 3s ease-in-out;
+
+            @include tablette {
+                width: 90%;
+                padding: 1vh 2vw;
+                font-size: 1.2rem;
+            }
+
+            @include mobile_S {
+                width: 90%;
+                padding: 1vh 2vw;
+                font-size: 1rem;
+            }
         }
 
         .imageCompet:hover .dateCompet {
@@ -487,6 +575,18 @@ EquipeRocket Esport
         margin-bottom: 5vh;
         text-align: center;
 
+        @include tablette {
+            margin-top: 10vh;
+        }
+
+        @include mobile_M {
+            margin-top: 2vh;
+            margin-bottom: 1vh;
+        }
+
+        @include mobile_S {
+            font-size: 1.8rem;
+        }
     }
 
     .cardPartenaire {
@@ -495,6 +595,18 @@ EquipeRocket Esport
         border: 2px solid $last-color;
         position: absolute;
 
+        @include tablette {
+            margin-top: 10vh;
+            width: 50vw;
+            height: 20vh;
+        }
+
+        @include mobile_M {
+            margin-top: 10vh;
+            width: 80vw;
+            height: 20vh;
+        }
+
         &.left-card {
             left: 10vw;
             top: 20vh;
@@ -502,6 +614,16 @@ EquipeRocket Esport
             @include desktop_1024 {
                 left: 15vw;
                 top: 25vh;
+            }
+
+            @include tablette {
+                left: 25vw;
+                top: 20vh;
+            }
+
+            @include mobile_M {
+                left: 10vw;
+                top: 20vh;
             }
         }
 
@@ -513,13 +635,22 @@ EquipeRocket Esport
                 right: 5vw;
                 top: 35vh;
             }
+
+            @include tablette {
+                right: 25vw;
+                top: 45vh;
+            }
+
+            @include mobile_M {
+                right: 10vw;
+                top: 45vh;
+            }
         }
 
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
         }
     }
 }
@@ -553,15 +684,32 @@ EquipeRocket Esport
                 width: 12vw;
                 margin-bottom: 2vh;
                 animation: jump 2s infinite;
+
+                @include tablette {
+                    width: 30vw;
+                }
+
+                @include mobile_M {
+                    width: 50vw;
+                    margin-top: 5vh;
+                }
             }
 
             .streamerPartenaire {
                 display: flex;
                 flex-direction: row;
+
+                @include tablette {
+                    flex-direction: column;
+                }
+
+                @include mobile_S {
+                    margin-left: -5vw;
+                }
             }
 
             .cardStreamer {
-                position: relative; /* Assurez-vous que la carte a une position relative pour positionner le nom du streamer par rapport à la carte */
+                position: relative;
 
                 p {
                     font-size: 3vh;
@@ -570,6 +718,10 @@ EquipeRocket Esport
                 img {
                     border: 2px solid $last-color;
                     margin: 1vh 10vw;
+
+                    @include mobile_S {
+                        width: 60vw;
+                    }
                 }
 
                 .nameStreamer {
@@ -677,11 +829,11 @@ EquipeRocket Esport
     .imgClavierGaming {
         position: relative;
         width: 100%;
+
         img {
             width: 100%;
             height: 40vh;
             object-fit: cover;
-
         }
 
         .cardStats {
@@ -697,23 +849,53 @@ EquipeRocket Esport
                 height: 15vw;
             }
 
+            @include tablette {
+                width: 20vw;
+                height: 20vw;
+                margin-left: 1vw;
+            }
+
+            @include mobile_M {
+                width: 30vw;
+                height: 20vw;
+                margin-left: 1vw;
+            }
+
+            @include mobile_S {
+                width: 35vw;
+                height: 10vh;
+            }
+
             p {
                 color: $main-color;
                 opacity: 1;
                 font-size: 1.5rem;
-                text-align: center; /* Centrer le texte horizontalement */
+                text-align: center;
 
                 @include desktop_1024 {
                     font-size: 1.2rem;
+                }
+
+                @include mobile_M {
+                    font-size: 1rem;
+                }
+
+                @include mobile_S {
+                    font-size: 0.6rem;
                 }
             }
 
             .number {
                 font-weight: bold;
                 font-size: 3rem;
+
+                @include mobile_S {
+                    font-size: 2rem;
+                }
             }
         }
     }
+
     .cardsContainer {
         display: flex;
         justify-content: space-between;
@@ -723,6 +905,10 @@ EquipeRocket Esport
         padding-left: 10vw;
         padding-right: 10vw;
         opacity: 0.8;
+
+        @include mobile_M {
+            top: 35%;
+        }
     }
 }
 

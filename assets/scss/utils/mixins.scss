@@ -22,12 +22,6 @@
   }
 }
 
-@mixin mobile_L {
-  @media (max-width: 640px) {
-    @content;
-  }
-}
-
 @mixin mobile_M {
   @media (max-width: 480px) {
     @content;
