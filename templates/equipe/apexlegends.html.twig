@@ -8,7 +8,7 @@
     <div class="equipeEsportApexLegendsPresentation">
         <div class="equipe">
             <h2>Apex Legends</h2>
-            <div class="allCard">
+            <div class="allCard equipeContainer"> {# Ajoutez la classe equipeContainer ici #}
                 {% for equipeApexLegends in equipeApexLegends %}
                     {% if loop.index is odd %}
                         <div class="cardEquipe" id="equipe{{ loop.index }}">
@@ -32,7 +32,7 @@
                     {% else %}
                         <div class="cardEquipe" id="equipe{{ loop.index }}">
                             <div class="description" data-aos="fade-right">
-                                <h3>Présentation IRL</h3>
+                            <h3>Présentation IRL</h3>
                                 <p>
                                     {{ equipeApexLegends.presentationIRL }}
                                 </p>
@@ -47,12 +47,11 @@
                                     <h3 class="title">{{ equipeApexLegends.id == 2 ? 'Joueur 2' : 'Coach' }} : {{ equipeApexLegends.firstname }} {{ equipeApexLegends.lastname }}</h3>
                                 </div>
                             </div>
+                            {% endif %}
+                            {% endfor %}
                         </div>
-                    {% endif %}
-                {% endfor %}
             </div>
         </div>
     </div>
-
 {% endblock %}
 

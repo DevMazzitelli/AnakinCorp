@@ -5,37 +5,6 @@ Nos partenaires
 {% endblock %}
 
 {% block pagePartenaire %}
-    <div class="partenaire" id="partenairePage">
-        <h2>NOS PARTENAIRES</h2>
-
-        {% for partenaire in partenaires %}
-            <div class="cardPartenaire {% if loop.index == 2 %}right-card{% else %}left-card{% endif %}">
-                <a href="{{ partenaire.link }}">
-                    <img src="{{ asset('medias/images/partenaire/' ~ partenaire.images) }}" alt="{{ partenaire.name }}">
-                </a>
-                <h3>{{ partenaire.name }}</h3>
-                <p class="descriptionPartenaire">{{ partenaire.description }}</p>
-                <div class="reseau">
-                    <p>
-                        <a href="{{ partenaire.twitter }}" target="_blank">
-                            <img src="{{ asset('medias/logo/twitter.png') }}" alt="Twitter {{ partenaire.name }}">
-                        </a>
-                    </p>
-                    <p>
-                        <a href="{{ partenaire.twitch }}" target="_blank">
-                            <img src="{{ asset('medias/logo/Twitch.jpg') }}" alt="Twitch {{ partenaire.name }}">
-                        </a>
-                    </p>
-                    <p>
-                        <a href="{{ partenaire.discord }}" target="_blank">
-                            <img src="{{ asset('medias/logo/discord.png') }}" alt="discord {{ partenaire.name }}">
-                        </a>
-                    </p>
-                </div>
-
-            </div>
-        {% endfor %}
-    </div>
-
+        {{ include('réutilisable/partenaire.html.twig') }}
 {% endblock %}
 

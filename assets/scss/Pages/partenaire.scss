@@ -1,44 +1,116 @@
-@import "../utils/mixins";
-@import "../utils/color";
-@import "../utils/placement";
-
-@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
-
-#partenairePage {
-  height: 100vh;
-}
+// Styles pour la section des partenaires
 .partenaire {
+  text-align: center;
+  padding: 20px;
+  margin-top: 10vh;
 
+  @include tablette {
+    margin-top: 20vh;
+    margin-bottom: -50vh;
+  }
+
+  @include mobile_S {
+    margin-top: 20vh;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .pagePartenaire {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include tablette {
+      flex-direction: column;
+      align-items: center; /* Ajoutez cette ligne pour centrer les cartes */
+    }
+  }
+
+  // Styles pour les cartes des partenaires
   .cardPartenaire {
+    width: calc(50% - 20px);
+    margin-bottom: -40vh;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: $main-color;
+    text-align: center;
+    margin-right: 40px;
+
+    @include tablette {
+      margin-bottom: 10vh;
+      width: 100%; /* Pour occuper la largeur complète en mode tablette */
+    }
+
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      height: auto;
+      margin-bottom: 10px;
+      max-width: 100%; /* Pour s'assurer que l'image s'adapte à la largeur de la carte */
+    }
 
     h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1vh;
-        text-align: center;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
 
     .descriptionPartenaire {
-        font-size: 1rem;
-        font-weight: 400;
-        margin-bottom: 1vh;
-        text-align: center;
-        line-height: 2.5vh;
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
     }
 
     .reseau {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1vh;
+      p {
+        display: inline-block;
+        margin-right: 10px;
 
-      img {
-        width: 2vw;
-        height: 2vw;
-        object-fit: cover;
-        margin: 0 0.5vw;
+        a {
+          img {
+            max-width: 30px;
+            height: auto;
+            vertical-align: middle;
+          }
+        }
       }
+    }
+  }
+
+  // Style pour la carte de droite
+  .right-card {
+    margin-right: 0;
+  }
+
+  // Styles pour tablette
+  @include tablette {
+    .pagePartenaire {
+      justify-content: center; /* Centrer horizontalement les cartes en mode tablette */
+    }
+  }
+
+  // Styles pour mobile_M
+  @include mobile_M {
+    .cardPartenaire {
+      width: 100%; /* Pour occuper la largeur complète en mode mobile_M */
+      margin-right: 0; /* Supprimer la marge à droite en mode mobile_M */
+    }
+  }
+
+  // Styles pour mobile_S
+  @include mobile_S {
+    .cardPartenaire {
+      width: 100%; /* Pour occuper la largeur complète en mode mobile_S */
+      margin-right: 0; /* Supprimer la marge à droite en mode mobile_S */
     }
   }
 }

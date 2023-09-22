@@ -65,12 +65,21 @@
       border-radius: 5px;
       overflow: hidden;
       cursor: pointer;
+
+      @include tablette {
+        width: 40vw;
+        height: 40vw;
+      }
+
+      @include mobile_M {
+
+      }
     }
 
     .image {
       width: 100%;
       height: 100%;
-      position: relative; /* Pour positionner le titre par rapport à l'image */
+      position: relative;
 
       img {
         width: 100%;
@@ -90,6 +99,18 @@
       padding: 1vh;
       font-size: 1.5rem;
       font-weight: bold;
+
+      @include desktop_1280 {
+        font-size: 1rem;
+      }
+
+      @include desktop_1024 {
+        font-size: 0.8rem;
+      }
+
+      @include tablette {
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -97,18 +118,38 @@
 
     width: 50%;
 
-    h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        text-align: center;
-        font-family : "Copperplate Gothic Bold", sans-serif;
-        margin-bottom: 1vh;
+    @include tablette {
+      width: 100%;
     }
-     p {
-       font-size: 1.2rem;
-       margin-top: 0.5vh;
-       margin-bottom: 5vh;
-       line-height: 3vh;
-     }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      font-family: "Copperplate Gothic Bold", sans-serif;
+      margin-bottom: 1vh;
+
+      @include tablette {
+        font-size: 1.2rem;
+      }
+
+      @include mobile_M {
+        display: none;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 0.5vh;
+      margin-bottom: 5vh;
+      line-height: 3vh;
+
+      @include tablette {
+        font-size: 0.8rem;
+      }
+      @include mobile_M {
+        display: none;
+      }
+    }
   }
 }

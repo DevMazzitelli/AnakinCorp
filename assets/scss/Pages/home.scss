@@ -14,7 +14,6 @@ body {
     background-color: $main-color;
     color: $last-color;
     font-family: 'Oswald',Helvetica,Arial,Lucida,sans-serif;
-    overflow-x: hidden;
 }
 
 html {
@@ -79,7 +78,7 @@ header {
         border-radius: 5px;
 
         @include mobile_S {
-            margin-top: 2vh;
+            margin-top: 5vh;
         }
     }
 
@@ -155,6 +154,10 @@ Bannière principale
             width: 100%;
             height: 40vh;
             margin-top: 1vh;
+        }
+
+        @include mobile_S {
+            margin-top: 10vh;
         }
 
 
@@ -298,6 +301,12 @@ Bannière principale
                 margin-top: 5vh;
                 padding: 3vw;
                 font-size: 0.9rem;
+            }
+
+            @include mobile_S {
+                margin-top: 5vh;
+                font-size: 0.9rem;
+                padding: 7vw 10vh;
             }
 
             a {
@@ -469,7 +478,7 @@ EquipeRocket Esport
         }
 
         @include mobile_S {
-            height: 65vh;
+            height: 70vh;
         }
 
         .fenetre:hover {
@@ -557,100 +566,6 @@ EquipeRocket Esport
             display: block;
             opacity: 1;
             padding-top: 4.5vh;
-        }
-    }
-}
-
-.partenaire {
-    padding-top: 10vh;
-    position: relative;
-
-    @include desktop_1024 {
-        padding-top: 15vh;
-    }
-
-    h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 5vh;
-        text-align: center;
-
-        @include tablette {
-            margin-top: 10vh;
-        }
-
-        @include mobile_M {
-            margin-top: 2vh;
-            margin-bottom: 1vh;
-        }
-
-        @include mobile_S {
-            font-size: 1.8rem;
-        }
-    }
-
-    .cardPartenaire {
-        width: 30vw;
-        height: 20vh;
-        border: 2px solid $last-color;
-        position: absolute;
-
-        @include tablette {
-            margin-top: 10vh;
-            width: 50vw;
-            height: 20vh;
-        }
-
-        @include mobile_M {
-            margin-top: 10vh;
-            width: 80vw;
-            height: 20vh;
-        }
-
-        &.left-card {
-            left: 10vw;
-            top: 20vh;
-
-            @include desktop_1024 {
-                left: 15vw;
-                top: 25vh;
-            }
-
-            @include tablette {
-                left: 25vw;
-                top: 20vh;
-            }
-
-            @include mobile_M {
-                left: 10vw;
-                top: 20vh;
-            }
-        }
-
-        &.right-card {
-            right: 10vw;
-            top: 30vh;
-
-            @include desktop_1024 {
-                right: 5vw;
-                top: 35vh;
-            }
-
-            @include tablette {
-                right: 25vw;
-                top: 45vh;
-            }
-
-            @include mobile_M {
-                right: 10vw;
-                top: 45vh;
-            }
-        }
-
-
-        img {
-            width: 100%;
-            height: 100%;
         }
     }
 }
