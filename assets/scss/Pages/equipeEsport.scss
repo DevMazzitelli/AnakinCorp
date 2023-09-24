@@ -71,9 +71,6 @@
         height: 40vw;
       }
 
-      @include mobile_M {
-
-      }
     }
 
     .image {
@@ -115,7 +112,6 @@
   }
 
   .description {
-
     width: 50%;
 
     @include tablette {

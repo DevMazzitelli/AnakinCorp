@@ -1,5 +1,10 @@
+@import "./utils/color";
+@import "./utils/placement";
+@import "./utils/mixins";
+
 @import "./Pages/home.scss";
 @import "./Pages/equipeEsport.scss";
 @import "./Pages/actualites.scss";
 @import "./Pages/partenaire.scss";
 @import "./Pages/security.scss";
+@import "./Pages/competition.scss";

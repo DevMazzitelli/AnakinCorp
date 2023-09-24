@@ -54,4 +54,16 @@ class HomeController extends AbstractController
             'partenaires' => $partenaires,
         ]);
     }
+
+    #[Route('/competition', name: 'app_competition')]
+    public function competition(CompetitionRepository $competitionRepository): Response
+    {
+
+        $competitions = $competitionRepository->findAll();
+
+        return $this->render('home/competition.html.twig', [
+            'controller_name' => 'HomeController',
+            'competitions' => $competitions,
+        ]);
+    }
 }

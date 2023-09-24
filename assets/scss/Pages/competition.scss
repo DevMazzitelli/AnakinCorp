@@ -1,0 +1,127 @@
+@import "../utils/mixins";
+@import "../utils/color";
+@import "../utils/placement";
+
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+
+.fenetreCompetition {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #000209;
+  border-radius: 5px;
+  width: 27vw;
+  height: 65vh;
+  border: 2px solid $last-color;
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+
+  @include desktop_1024 {
+    width: 30vw;
+    height: 70vh;
+    right: 5%;
+    bottom: -20%;
+  }
+
+  @include tablette {
+    width: 40vw;
+    height: 63vh;
+    margin-top: 2vh;
+  }
+
+  @include mobile_M {
+    width: 80vw;
+    height: 63vh;
+  }
+
+  @include mobile_S {
+    height: 70vh;
+    margin-top: 4vh;
+  }
+
+  .fenetre:hover {
+    opacity: 2;
+  }
+
+  h2 {
+    color: $last-color;
+    font-family: Calibri, serif;
+    text-align: center;
+    margin-top: 2vh;
+    border-bottom: 2px solid $main-color;
+    border-bottom-style: dashed;
+    // Mettre de l'espace entre mon border
+    padding-bottom: 1vh;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mobile_M {
+      width: 50vw;
+    }
+  }
+
+  .imageCompet {
+    position: relative; /* Ajoutez une position relative pour que les éléments internes se positionnent par rapport à cette div */
+
+    img {
+      margin-top: 2vh;
+      width: 80%;
+      height: 15vh;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    .titleCompet {
+      position: absolute;
+      bottom: 0;
+      left: 2.5vw;
+      width: 85%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le titre */
+      color: white;
+      text-align: center;
+      padding: 0.5vh;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+  .dateCompet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 15vh;
+    transform: translate(-50%, -50%);
+    background-color: #000209;
+    border: 1px solid white;
+    opacity: 0;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    padding: 2vh 3vw;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: none;
+    transition: opacity 3s ease-in-out;
+
+    @include tablette {
+      width: 90%;
+      padding: 1vh 2vw;
+      font-size: 1.2rem;
+    }
+
+    @include mobile_S {
+      width: 90%;
+      padding: 1vh 2vw;
+      font-size: 1rem;
+    }
+  }
+
+  .imageCompet:hover .dateCompet {
+    display: block;
+    opacity: 1;
+    padding-top: 4.5vh;
+  }
+}

@@ -2,6 +2,7 @@
 @import "../utils/color";
 @import "../utils/placement";
 
+
 @import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
 
 * {
@@ -141,8 +142,7 @@ header {
     }
 
     nav ul li {
-        margin: 1vh;
-        margin-right: 2vh;
+        margin: 1vh 2vh 1vh 1vh;
         padding: 0;
         font-weight: bold;
     }
@@ -157,6 +157,36 @@ header {
     }
 }
 
+@include tablette {
+    .sub-menuMobile {
+        visibility: hidden;
+        background-color: white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 6.45vh;
+        right: 15vw;
+        padding: 2vw;
+        box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px,
+        rgba(255, 255, 255, 0.5) 5px 10px 15px;
+        z-index: 1;
+        border-radius: 10px;
+
+        a {
+            text-decoration: none;
+            color: $main-color;
+            font-weight: bold;
+            margin: 1vh 0;
+        }
+        a:hover {
+            color: $discord-color;
+        }
+    }
+}
+
+.visible {
+    visibility: visible !important;
+}
 
 
 /*
@@ -530,7 +560,7 @@ EquipeRocket Esport
 
         h2 {
             color: $last-color;
-            font-family: Calibri;
+            font-family: Calibri, serif;
             text-align: center;
             margin-top: 2vh;
             border-bottom: 2px solid $main-color;
@@ -623,8 +653,6 @@ EquipeRocket Esport
 
     display: flex;
     justify-content: space-between;
-
-    // TODO: A modifier pour le responsive
 
     .cardTwitch {
         flex: 1;
@@ -869,12 +897,3 @@ EquipeRocket Esport
         }
     }
 }
-
-
-
-
-
-
-
-
-

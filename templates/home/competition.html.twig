@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Nos compétitions
+{% endblock %}
+
+{% block pageCompetition %}
+
+<div class="fenetreCompetition">
+    <h2>PROCHAINE COMPETITION</h2>
+
+    {% for key, competition in competitions|slice(0, 3) %}
+        <a href="{{ competition.link }}" target="_blank">
+            <div class="imageCompet" data-aos="{{ key % 2 == 0 ? 'fade-right' : 'fade-left' }}" data-aos-duration="2000">
+                <img src="{{ asset('medias/images/competition/' ~ competition.images) }}" alt="{{ competition.title }}">
+                <h3 class="titleCompet">{{ competition.title }}</h3>
+                <span class="dateCompet">{{ competition.type }} <br>{{ competition.date|date('d F Y H:i') }}</span>
+            </div>
+        </a>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
