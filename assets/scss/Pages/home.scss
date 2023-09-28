@@ -15,6 +15,7 @@ body {
     background-color: $main-color;
     color: $last-color;
     font-family: 'Oswald',Helvetica,Arial,Lucida,sans-serif;
+    overflow-x: hidden;
 }
 
 html {
@@ -38,7 +39,7 @@ html {
 
     @include tablette {
         display: flex;
-        margin-top: 2vh;
+        margin-top: 1vh;
     }
 }
 
@@ -122,7 +123,7 @@ header {
         border-radius: 5px;
 
         @include mobile_S {
-            margin-top: 5vh;
+            margin-top: 0.8vh;
         }
     }
 
@@ -164,13 +165,17 @@ header {
         position: absolute;
         display: flex;
         flex-direction: column;
-        top: 6.45vh;
+        top: 5vh;
         right: 15vw;
         padding: 2vw;
         box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px,
         rgba(255, 255, 255, 0.5) 5px 10px 15px;
         z-index: 1;
         border-radius: 10px;
+
+        @include mobile_M {
+            right: 25vw;
+        }
 
         a {
             text-decoration: none;
@@ -208,7 +213,7 @@ Bannière principale
 
     }
 
-    .displayNone {
+    #imgEsport {
         @include tablette {
             display: none;
         }
@@ -229,11 +234,6 @@ Bannière principale
             margin-top: 1vh;
         }
 
-        @include mobile_S {
-            margin-top: 10vh;
-        }
-
-
         h1 {
             font-size: 3vw;
             font-weight: bold;
@@ -241,6 +241,9 @@ Bannière principale
             margin-left: 5vw;
             text-decoration: underline;
 
+            span {
+                color : red;
+            }
             @include tablette {
                 margin-left: auto;
                 margin-right: auto;
@@ -294,6 +297,10 @@ Bannière principale
             margin-top: 10vh;
             width: 40%;
 
+            span {
+                color: red;
+            }
+
             @include desktop_1024 {
                 margin-left: 20vw;
                 width: 70%;
@@ -303,6 +310,10 @@ Bannière principale
                 margin-left: auto;
                 margin-right: auto;
                 width: 80%;
+            }
+
+            @include mobile_M {
+                margin-top: 2vh;
             }
         }
 
@@ -408,12 +419,8 @@ Nos équipes
         margin-right: auto;
     }
 
-    @include mobile_M {
-        margin-top: 30vh;
-    }
-
     @include mobile_S {
-        margin-top: 70vh;
+        margin-top: 25vh;
     }
 
     h2 {
@@ -424,7 +431,7 @@ Nos équipes
         text-align: center;
 
         @include mobile_S {
-            font-size: 2.3rem;
+            font-size: 2rem;
         }
     }
 
@@ -551,7 +558,7 @@ EquipeRocket Esport
         }
 
         @include mobile_S {
-            height: 70vh;
+            height: 63vh;
         }
 
         .fenetre:hover {
@@ -653,6 +660,10 @@ EquipeRocket Esport
 
     display: flex;
     justify-content: space-between;
+
+    @include mobile_M {
+        margin-top: 45vh;
+    }
 
     .cardTwitch {
         flex: 1;
@@ -897,3 +908,4 @@ EquipeRocket Esport
         }
     }
 }
+

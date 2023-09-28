@@ -18,8 +18,8 @@
     margin-bottom: -50vh;
   }
 
-  @include mobile_S {
-    margin-top: 20vh;
+  @include mobile_M {
+    margin-top: 10vh;
   }
 
   h2 {
@@ -50,7 +50,7 @@
     margin-right: 40px;
 
     @include tablette {
-      margin-bottom: 10vh;
+      margin-bottom: 3vh;
       width: 100%; /* Pour occuper la largeur complète en mode tablette */
     }
 
