@@ -169,6 +169,12 @@
 
         {% block login %}{% endblock %}
         {% block register %}{% endblock %}
+
+        {% block cookie %}{% endblock %}
+
+    <footer>
+        {{ include('home/cookie.html.twig') }}
+    </footer>
     <script>
         AOS.init();
     </script>
