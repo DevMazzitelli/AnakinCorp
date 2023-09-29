@@ -35,6 +35,10 @@
 .equipe {
   margin-top: 1vh;
 
+  @include mobile_S {
+    margin-top: 5vh;
+  }
+
   h2 {
     font-size: 2rem;
     font-weight: bold;
@@ -49,6 +53,11 @@
     justify-content: space-between;
     margin-left: 20vw;
     margin-right: 20vw;
+
+    @include mobile_S {
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     .cardEquipe {
       width: 100%;
@@ -69,6 +78,13 @@
       @include tablette {
         width: 40vw;
         height: 40vw;
+      }
+
+      @include mobile_S {
+        width: 250vw;
+        height: 80vw;
+        margin-right: 1vh;
+        margin-left: 1vh;
       }
 
     }
