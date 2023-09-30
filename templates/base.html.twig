@@ -171,9 +171,15 @@
         {% block register %}{% endblock %}
 
         {% block cookie %}{% endblock %}
+        {% block politique %}{% endblock %}
+        {% block mentions %}{% endblock %}
 
     <footer>
         {{ include('home/cookie.html.twig') }}
+
+        <a href="{{ path('app_mentions') }}">Mentions légales</a>
+        <a href="{{ path('app_politique') }}">Politique de confidentialité</a>
+        <p>© 2023 AnakinCorp. Tous droits réservés.</p>
     </footer>
     <script>
         AOS.init();

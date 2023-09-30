@@ -8,14 +8,26 @@ use App\Repository\CompteurRepository;
 use App\Repository\PartenaireRepository;
 use App\Repository\StreamerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(CompetitionRepository $competitionRepository, PartenaireRepository $partenairesRepository, StreamerRepository $streamerRepository, ActualiteRepository $actualiteRepository, CompteurRepository $compteurRepository): Response
+    public function index(CompetitionRepository $competitionRepository, PartenaireRepository $partenairesRepository, StreamerRepository $streamerRepository, ActualiteRepository $actualiteRepository, CompteurRepository $compteurRepository, Request $request): Response
     {
+
+        $cookiesAccepted = $request->cookies->get('cookiesAccepted');
+
+        if (!$cookiesAccepted) {
+            // Si l'utilisateur n'a pas encore accepté les cookies, définissez le cookie
+            $response = new Response();
+            $response->headers->setCookie(new Cookie('cookiesAccepted', 'true', time() + 365 * 24 * 60 * 60)); // Le cookie expire dans un an
+            $response->send();
+        }
+
         $competitions = $competitionRepository->findAll();
         $partenaires = $partenairesRepository->findAll();
         $streamers = $streamerRepository->findAll();

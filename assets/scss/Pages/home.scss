@@ -540,10 +540,10 @@ Nos équipes
     }
 
     @include mobile_M {
-        margin-top: 12vh;
+        margin-top: 15vh;
     }
     @include mobile_S {
-        margin-top: 30vh;
+        margin-top: 35vh;
     }
 
     h2 {
@@ -1037,6 +1037,27 @@ EquipeRocket Esport
         @include mobile_M {
             top: 35%;
         }
+    }
+}
+
+footer {
+    color: white; /* Couleur du texte */
+    padding: 20px;
+    text-align: center; /* Centrer le contenu */
+
+    a {
+        color: #FFD700; /* Couleur des liens */
+        text-decoration: none;
+        margin: 0 10px; /* Espacement des liens */
+    }
+
+    a:hover {
+        text-decoration: underline; /* Soulignement au survol des liens */
+    }
+
+    p {
+        margin-top: 20px; /* Espacement entre les liens et le texte */
+        font-size: 14px; /* Taille de la police pour le texte de copyright */
     }
 }
 

@@ -1,0 +1,58 @@
+@import "../utils/mixins";
+@import "../utils/color";
+@import "../utils/placement";
+
+
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+
+/* Style pour la section mentions */
+
+.mention {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mention h1 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+  padding: 20px 0;
+  color: #333;
+}
+
+.mention p {
+  text-align: justify;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.mention strong {
+  font-weight: bold;
+  color: #333;
+}
+
+.mention footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.mention footer a {
+  color: #FFD700;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.mention footer a:hover {
+  text-decoration: underline;
+}
+
+.mention p:last-child {
+  margin-bottom: 0;
+}

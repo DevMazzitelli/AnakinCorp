@@ -17,13 +17,15 @@ function incrementerCompteur(compteurElement, nombreCible, vitesseIncrementation
     }, vitesseIncrementation);
 }
 
+const apiUrl = 'https://127.0.0.1:8000/compteur';
+const apiUrlProd = 'http://structureesport.ryan-mazzitelli.fr/compteur';
 
 // Fonction pour gérer l'intersection de la div avec la fenêtre
 function gestionIntersection(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
 
-            fetch('https://127.0.0.1:8000/compteur')
+            fetch(apiUrl)
                 .then(function (response) {
                     return(response.json());
                 }) .then(function (data) {
