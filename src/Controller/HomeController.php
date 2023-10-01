@@ -11,22 +11,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(CompetitionRepository $competitionRepository, PartenaireRepository $partenairesRepository, StreamerRepository $streamerRepository, ActualiteRepository $actualiteRepository, CompteurRepository $compteurRepository, Request $request): Response
+    public function index(CompetitionRepository $competitionRepository, PartenaireRepository $partenairesRepository, StreamerRepository $streamerRepository, ActualiteRepository $actualiteRepository, CompteurRepository $compteurRepository, Request $request, SessionInterface $session): Response
     {
 
-        $cookiesAccepted = $request->cookies->get('cookiesAccepted');
+        $cookiesAccepted = $session->get('cookiesAccepted');
 
         if (!$cookiesAccepted) {
-            // Si l'utilisateur n'a pas encore accepté les cookies, définissez le cookie
-            $response = new Response();
-            $response->headers->setCookie(new Cookie('cookiesAccepted', 'true', time() + 365 * 24 * 60 * 60)); // Le cookie expire dans un an
-            $response->send();
+            // Si l'utilisateur n'a pas encore accepté les cookies, marquez-le dans la session
+            $session->set('cookiesAccepted', true);
         }
+
+        $cookiesAccepted = $request->cookies->get('cookiesAccepted');
+        $hasAcceptedCookies = $cookiesAccepted === 'true';
+
 
         $competitions = $competitionRepository->findAll();
         $partenaires = $partenairesRepository->findAll();
@@ -41,6 +44,7 @@ class HomeController extends AbstractController
             'streamers' => $streamers,
             'actualites' => $actualites,
             'compteurs' => $compteurs,
+            'hasAcceptedCookies' => $hasAcceptedCookies,
         ]);
     }
 
