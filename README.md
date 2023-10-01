@@ -29,7 +29,7 @@ BACK-END :
 - Système d'inscription et d'authentification.
 - Système de hierarchie des rôles (Admin/user)
 - Pannel d'administration pour modifier l'entierté du site.
-  ![Pannel d'admin]([https://ibb.co/WVP6xL1](https://i.postimg.cc/MTrxbXv1/Img-Pannel-Admin-Structure-Esport.png))
+  ![Pannel d'admin](https://i.postimg.cc/MTrxbXv1/Img-Pannel-Admin-Structure-Esport.png)
 - Restrictions des routes en fonction des rôles.
 - Restrictions des cruds pour l'harmonie du front.
 - Système généraliser d'ajout d'image (400x150, 550x200, 300x300, 330x175)
