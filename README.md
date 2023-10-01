@@ -7,7 +7,7 @@ Vous pouvez accéder au site web ici : [Structure Esport](http://structureesport
 ## Aperçu du Site
 
 ### Version Desktop
-![Version Desktop](https://postimg.cc/CRhYJqGs)
+![Version Desktop](https://i.postimg.cc/pL8TWQy4/Img-Desktop-Structure-Esport.png)
 
 ### Version Mobile
 ![Version Mobile](https://ibb.co/R0hFJJ2)
