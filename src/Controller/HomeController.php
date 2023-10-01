@@ -55,18 +55,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/partenaire', name: 'app_partenaire')]
-    public function partenaire(PartenaireRepository $partenairesRepository): Response
-    {
-
-        $partenaires = $partenairesRepository->findAll();
-
-        return $this->render('home/partenaire.html.twig', [
-            'controller_name' => 'HomeController',
-            'partenaires' => $partenaires,
-        ]);
-    }
-
     #[Route('/competition', name: 'app_competition')]
     public function competition(CompetitionRepository $competitionRepository): Response
     {

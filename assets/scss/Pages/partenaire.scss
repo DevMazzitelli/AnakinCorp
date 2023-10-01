@@ -4,20 +4,6 @@
 
 @import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
 
-.sessionPartenaireMobile {
-  margin-top: -10vh;
-  position: absolute;
-  z-index: -1;
-
-  @include tablette {
-    margin-top: -20vh;
-  }
-
-    @include mobile_M {
-        margin-top: -7vh;
-    }
-}
-
 .partenaire {
   text-align: center;
   padding: 20px;

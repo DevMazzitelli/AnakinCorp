@@ -3,6 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Competition;
+use App\Entity\EquipeApexLegends;
+use App\Entity\EquipeCallOfDuty;
+use App\Entity\EquipeRocket;
 use App\Entity\Partenaire;
 use App\Repository\CompteurRepository;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -52,8 +55,14 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Equipe Esport', 'fas fa-users')->setSubItems(
             [
                 MenuItem::linkToCrud('Team Rocket League', 'fas fa-list', \App\Entity\EquipeRocket::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', EquipeRocket::class)->setAction(Crud::PAGE_NEW),
+
                 MenuItem::linkToCrud('Team Call of Duty', 'fas fa-list', \App\Entity\EquipeCallOfDuty::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', EquipeCallOfDuty::class)->setAction(Crud::PAGE_NEW),
+
                 MenuItem::linkToCrud('Team Apex Legends', 'fas fa-list', \App\Entity\EquipeApexLegends::class),
+                MenuItem::linkToCrud('Ajouter', 'fas fa-plus', EquipeApexLegends::class)->setAction(Crud::PAGE_NEW),
+
             ]
         );
 

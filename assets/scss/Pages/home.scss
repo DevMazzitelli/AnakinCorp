@@ -93,14 +93,14 @@ html {
     display: flex;
     flex-direction: row;
     gap: 2vh;
-    padding-right: 22vh;
+    padding-right: 15.5vh;
 
     @include desktop_1536 {
-        padding-right: 24vh;
+        padding-right: 17.5vh;
     }
 
     @include desktop_1024 {
-        padding-right: 19vh;
+        padding-right: 13.5vh;
     }
 
     @include tablette {
@@ -178,7 +178,7 @@ header {
         flex-direction: column;
         position: absolute;
         top: 4.2vh;
-        left: 69.5%;
+        left: 75.5%;
         width: 10vw;
         background-color: white;
         z-index: 1;
@@ -189,6 +189,21 @@ header {
             &:hover {
                 color: $discord-color;
             }
+        }
+
+        @include desktop_1536 {
+            left: 71%;
+            width: 11vw;
+        }
+
+        @include desktop_1280 {
+            left: 66%;
+            width: 12vw;
+        }
+
+        @include desktop_1024 {
+            left: 63%;
+            width: 13vw;
         }
     }
 
@@ -1044,6 +1059,9 @@ footer {
     color: white; /* Couleur du texte */
     padding: 20px;
     text-align: center; /* Centrer le contenu */
+    // Le mettre tout en bas de ma page
+    position: relative;
+    bottom: 0;
 
     a {
         color: #FFD700; /* Couleur des liens */
