@@ -8,7 +8,6 @@ use App\Repository\CompteurRepository;
 use App\Repository\PartenaireRepository;
 use App\Repository\StreamerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;

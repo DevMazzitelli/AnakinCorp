@@ -1,5 +1,11 @@
+# Déclaration du chemin vers les contrôleurs et le namespace
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+    resource: ../src/Controller/
+    type: annotation
+
+# Définition de la route pour /login
+login:
+    path: /login
+    controller: 'App\Controller\SecurityController::login'
+    schemes: ['https']
+    methods: ['GET', 'POST']

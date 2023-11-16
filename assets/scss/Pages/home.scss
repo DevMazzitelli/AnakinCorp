@@ -245,6 +245,7 @@ header {
         text-decoration: none;
         color: $last-color;
         font-weight: bold;
+        font-size: 1.2rem;
         @include desktop_1024 {
             font-size: 0.8rem;
         }
