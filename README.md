@@ -2,8 +2,6 @@
 
 Bienvenue dans le projet Structure Esport, un site dédié à une structures esport et de ses partenaires. Cette application web permet de gérer des compétitions, des équipes, des partenaires, des streamers et des actualités liées à l'esport de la structure.
 
-Vous pouvez accéder au site web ici : [Structure Esport](http://structureesport.ryan-mazzitelli.fr/)
-
 ## Aperçu du Site
 
 ### Version Desktop
